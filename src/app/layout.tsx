@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
+import "./globals.css";
+import SchemaOrg from "@/components/SchemaOrg";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://brandsoft.com.co'),
+  title: {
+    default: "BrandSoft | Software a la Medida, SEO e IA",
+    template: "%s | BrandSoft"
+  },
+  description: "Especialistas en Desarrollo con Next.js, SEO Técnico Avanzado y Agentes de IA impulsados por Sendell. Potenciamos marcas de alto nivel con tecnología de vanguardia.",
+  keywords: ["Desarrollo Software Bogotá", "SEO Técnico Colombia", "Agentes IA Sendell", "Next.js Developer", "Consultoría Software"],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'BrandSoft | IA y Transformación Digital',
+    description: 'Revoluciona tu estrategia de branding y marketing con software de alto rendimiento.',
+    url: 'https://brandsoft.com.co',
+    siteName: 'BrandSoft',
+    locale: 'es_CO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BrandSoft | IA y Transformación Digital',
+    description: 'Revoluciona tu estrategia de branding y marketing con software de alto nivel.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es" className="dark scroll-smooth">
+      <body
+        className={`${inter.variable} ${outfit.variable} antialiased bg-black text-white font-sans`}
+      >
+        <SchemaOrg />
+        {children}
+        <WhatsAppWidget />
+      </body>
+    </html>
+  );
+}
