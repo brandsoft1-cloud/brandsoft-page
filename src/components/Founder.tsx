@@ -14,18 +14,18 @@ export default function Founder() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative"
+                        className="relative w-full max-w-md mx-auto lg:mx-0"
                     >
-                        {/* Abstract Founder Avatar / Placeholder */}
-                        <div className="aspect-square rounded-3xl overflow-hidden relative border border-white/10 bg-gradient-to-br from-violet-900/40 to-black">
-                            <div className="absolute inset-0 bg-cyber-grid opacity-20" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                {/* Fallback portrait or abstract representation for MVP */}
-                                <div className="w-full h-full bg-white/5 backdrop-blur-sm flex flex-col items-center justify-center p-8 text-center text-gray-400">
-                                    <Target className="w-20 h-20 mb-4 text-violet-400 opacity-50" />
-                                    <p className="text-sm">Founder Profile Image</p>
-                                </div>
-                            </div>
+                        <div className="rounded-3xl overflow-hidden border border-white/10 bg-zinc-950 shadow-2xl shadow-violet-950/20">
+                            <Image
+                                src="/images/mauricio-forero-ceo.png"
+                                alt="Mauricio Forero, CEO y fundador de BrandSoft, en exterior con cielo azul"
+                                width={1200}
+                                height={1600}
+                                sizes="(max-width: 1024px) 100vw, 448px"
+                                className="w-full h-auto object-cover object-[center_25%] block"
+                                priority
+                            />
                         </div>
                         {/* Floating stats */}
                         <div className="absolute -bottom-6 -right-6 bg-black border border-white/10 rounded-2xl p-6 shadow-2xl">

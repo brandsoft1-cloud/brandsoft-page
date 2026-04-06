@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Por qué Next.js es el futuro del Desarrollo de Software (2026)",
@@ -38,7 +39,10 @@ export default function BlogPost() {
                         Por qué Next.js es el futuro del <span className="text-violet-400">Software Empresarial</span> (2026)
                     </h1>
                     <div className="flex items-center justify-center gap-4 text-xs text-gray-500 uppercase tracking-widest font-bold">
-                        <span>MAURICIO FORERO</span>
+                        <div className="flex items-center gap-2">
+                            <Image src="/images/mauricio-forero-ceo.png" alt="Mauricio Forero" width={24} height={24} className="rounded-full object-cover" />
+                            <span>MAURICIO FORERO</span>
+                        </div>
                         <span>•</span>
                         <span>MARZO 25, 2026</span>
                         <span>•</span>

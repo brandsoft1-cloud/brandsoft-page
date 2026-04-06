@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function WhatsAppWidget() {
     const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +39,14 @@ export default function WhatsAppWidget() {
                         {/* Header */}
                         <div className="bg-emerald-600 p-6 flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                    <MessageCircle className="text-white w-6 h-6" />
+                                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/20">
+                                    <Image
+                                        src="/images/mauricio-forero-ceo.png"
+                                        alt="Mauricio"
+                                        width={80}
+                                        height={80}
+                                        className="h-full w-full object-cover"
+                                    />
                                 </div>
                                 <div className="text-white">
                                     <div className="text-sm font-bold">Mauricio Forero</div>
