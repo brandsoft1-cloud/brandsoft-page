@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import { defaultRobotsMetadata, SITE_URL } from "@/lib/robots-config";
 import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import StickyMobileCta from "@/components/StickyMobileCta";
@@ -17,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brandsoft.com.co'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "BrandSoft | Software a la Medida, SEO e IA",
     template: "%s | BrandSoft"
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'BrandSoft | IA y Transformación Digital',
     description: 'Revoluciona tu estrategia de branding y marketing con software de alto rendimiento.',
-    url: 'https://brandsoft.com.co',
+    url: SITE_URL,
     siteName: 'BrandSoft',
     locale: 'es_CO',
     type: 'website',
@@ -40,10 +41,7 @@ export const metadata: Metadata = {
     title: 'BrandSoft | IA y Transformación Digital',
     description: 'Revoluciona tu estrategia de branding y marketing con software de alto nivel.',
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: defaultRobotsMetadata,
   verification: {
     google: 'ZPQimhsJaJXQRy1mbrk0iVb4IrQuOxyJKM2hgmuRrUU',
   },

@@ -74,6 +74,9 @@ export default function Navbar() {
                                         <Link href="/recursos" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors">
                                             → Recursos y lead magnets
                                         </Link>
+                                        <Link href="/paginas-web-colombia" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors">
+                                            → Páginas web por ciudad
+                                        </Link>
                                         <Link href="/casos-de-exito" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors border-b border-white/5 mb-1">
                                             → Casos de éxito
                                         </Link>
@@ -196,6 +199,7 @@ export default function Navbar() {
                         <Link href="/generacion-leads-b2b" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• Leads B2B</Link>
                         <Link href="/industrias" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Industrias</Link>
                         <Link href="/recursos" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Recursos</Link>
+                        <Link href="/paginas-web-colombia" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Páginas web por ciudad</Link>
                         <Link href="/casos-de-exito" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Casos de éxito</Link>
                         <div className="px-3 py-2 text-sm text-gray-500 font-bold uppercase tracking-wider">Servicios</div>
                         <Link href="/desarrollo-web" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Desarrollo Web y Apps</Link>

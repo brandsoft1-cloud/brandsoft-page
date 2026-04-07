@@ -56,6 +56,38 @@ export default function RecursosPage() {
                     <code className="text-white/80">LeadMagnetForm.tsx</code> (webhook o form ID).
                 </p>
 
+                <div className="mb-12 p-6 rounded-2xl border border-violet-500/30 bg-violet-950/20">
+                    <p className="text-xs font-black uppercase tracking-widest text-violet-400 mb-2">
+                        Recurso destacado para captar clientes
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mb-2">
+                        Cómo posicionar en Google gratis (enfoque B2B con CTA)
+                    </h2>
+                    <p className="text-gray-400 mb-4">
+                        Subpágina y artículo listos para atraer demanda orgánica y convertir en auditorías / demos.
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                        <Link
+                            href="/como-posicionar-google-gratis"
+                            className="inline-flex items-center px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-black text-xs uppercase tracking-wide"
+                        >
+                            Ver subpágina comercial
+                        </Link>
+                        <Link
+                            href="/blog/como-posicionar-google-gratis-b2b-colombia"
+                            className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/15 hover:border-violet-500/40 text-white font-bold text-xs uppercase tracking-wide"
+                        >
+                            Ver artículo del blog
+                        </Link>
+                        <Link
+                            href="/paginas-web-colombia"
+                            className="inline-flex items-center px-5 py-2.5 rounded-full border border-emerald-500/40 hover:bg-emerald-500/10 text-emerald-400 font-bold text-xs uppercase tracking-wide"
+                        >
+                            Ver páginas web por ciudad
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-3 gap-6 mb-16">
                     {MAGNETS.map((m) => {
                         const Icon = m.icon;

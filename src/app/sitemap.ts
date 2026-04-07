@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
 import { CITIES, SERVICES, VERTICALS } from '@/data/seo-config';
 import { getAllPosts } from '@/lib/mdx';
+import { SITE_URL } from '@/lib/robots-config';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://brandsoft.com.co';
+    const baseUrl = SITE_URL;
     const now = new Date();
     const entries = new Map<string, MetadataRoute.Sitemap[number]>();
 
@@ -22,6 +23,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${baseUrl}/industrias/finanzas`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
         { url: `${baseUrl}/industrias/salud`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
         { url: `${baseUrl}/recursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/como-posicionar-google-gratis`, lastModified: now, changeFrequency: 'weekly', priority: 0.94 },
+        { url: `${baseUrl}/paginas-web-colombia`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+        { url: `${baseUrl}/paginas-web/bogota`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/paginas-web/medellin`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/paginas-web/cali`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/paginas-web/barranquilla`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
         { url: `${baseUrl}/casos-de-exito`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
         { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
         { url: `${baseUrl}/mentorias`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
