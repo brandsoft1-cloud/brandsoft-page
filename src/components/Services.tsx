@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Sparkles, Megaphone, Code, BrainCircuit, ArrowRight } from 'lucide-react';
+import { Sparkles, Megaphone, Code, BrainCircuit, MessageCircle } from 'lucide-react';
+import { whatsAppHref } from '@/lib/contact';
 
 const services = [
     {
@@ -81,13 +81,17 @@ export default function Services() {
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
                             <p className="text-gray-400 mb-6">{service.description}</p>
-                            <Link
-                                href="/#contacto"
-                                className="inline-flex items-center gap-2 text-sm font-bold text-violet-400 hover:text-white transition-colors group/cta"
+                            <a
+                                href={whatsAppHref(
+                                    `Hola BrandSoft, vi el servicio "${service.title}" y quiero asesoría gratuita.`
+                                )}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors group/cta"
                             >
-                                Quiero asesoría gratis
-                                <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform" />
-                            </Link>
+                                <MessageCircle className="w-4 h-4" />
+                                WhatsApp — asesoría gratis
+                            </a>
                         </motion.div>
                     ))}
                 </div>

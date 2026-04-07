@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { whatsAppHref } from '@/lib/contact';
 
@@ -40,13 +39,13 @@ export default function CtaConversionBand({ title, subtitle, whatsappContext }: 
                         <MessageCircle className="w-5 h-5" />
                         Escribir por WhatsApp ahora
                     </a>
-                    <Link
-                        href="/#contacto"
+                    <a
+                        href="tel:+573213296957"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/20 hover:border-white/40 text-white font-bold text-sm uppercase tracking-wide transition-all"
                     >
-                        Dejar datos en el formulario
-                        <ArrowRight className="w-4 h-4" />
-                    </Link>
+                        <Phone className="w-4 h-4" />
+                        Llamar ahora
+                    </a>
                 </div>
             </div>
         </motion.div>

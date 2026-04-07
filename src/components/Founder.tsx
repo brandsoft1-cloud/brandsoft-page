@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { Award, Target, Zap, Linkedin, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import { whatsAppHref } from '@/lib/contact';
@@ -86,12 +85,6 @@ export default function Founder() {
                                 <MessageCircle className="w-5 h-5" />
                                 WhatsApp con Mauricio
                             </a>
-                            <Link
-                                href="/#contacto"
-                                className="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-500 text-white px-6 py-3 rounded-full font-bold text-sm transition-colors"
-                            >
-                                Formulario de contacto
-                            </Link>
                             <a
                                 href="https://www.linkedin.com/in/mauricio-forero/"
                                 target="_blank"

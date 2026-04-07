@@ -30,7 +30,7 @@ export default function Contact() {
 
                         <div className="flex flex-col sm:flex-row gap-3 mb-10">
                             <a
-                                href={whatsAppHref('Hola BrandSoft, quiero cotizar / asesoría. Les escribo desde el formulario de contacto de la web.')}
+                                href={whatsAppHref('Hola BrandSoft, quiero cotizar / asesoría. Les escribo desde la sección de contacto de la web.')}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wide shadow-lg shadow-emerald-600/25 transition-all"
@@ -79,7 +79,8 @@ export default function Contact() {
                     >
                         <p className="text-emerald-400 text-xs font-black uppercase tracking-widest mb-2">O déjanos tus datos</p>
                         <h3 className="text-2xl font-bold text-white mb-6">Te contactamos en menos de 24 h</h3>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        {/* CRM: conectar action a HubSpot / Zoho / Pipedrive (Forms API o embed). dataLayer ya puede capturar envíos vía GTM. */}
+                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()} data-form="contacto-marca">
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
                                 <input

@@ -118,12 +118,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                             <MessageCircle className="w-5 h-5" />
                             WhatsApp ahora
                         </a>
-                        <Link
-                            href="/#contacto"
+                        <a
+                            href="tel:+573213296957"
                             className="w-full sm:w-auto border-2 border-white/25 hover:border-white/50 text-white px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest transition-all inline-flex items-center justify-center"
                         >
-                            Dejar mis datos
-                        </Link>
+                            Llamar
+                        </a>
                     </div>
                 </div>
             </section>

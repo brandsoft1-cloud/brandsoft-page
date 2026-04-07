@@ -1,11 +1,10 @@
 'use client';
 
-import { MessageCircle, Send } from 'lucide-react';
-import Link from 'next/link';
+import { MessageCircle } from 'lucide-react';
 import { whatsAppHref } from '@/lib/contact';
 
 /**
- * Barra fija inferior en móvil: doble CTA muy visible.
+ * Barra fija inferior en móvil: CTA principal a WhatsApp.
  * El widget flotante de WhatsApp se desplaza arriba de esta barra.
  */
 export default function StickyMobileCta() {
@@ -18,23 +17,16 @@ export default function StickyMobileCta() {
             <p className="text-center text-[10px] font-bold uppercase tracking-widest text-emerald-400/90 mb-1.5">
                 Respuesta hoy — sin compromiso
             </p>
-            <div className="flex gap-2 max-w-md mx-auto">
+            <div className="max-w-md mx-auto">
                 <a
                     href={whatsAppHref()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all"
+                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all"
                 >
                     <MessageCircle className="w-4 h-4 shrink-0" />
-                    WhatsApp
+                    WhatsApp — cotización / asesoría
                 </a>
-                <Link
-                    href="/#contacto"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-black text-xs uppercase tracking-wide shadow-lg shadow-violet-600/30 active:scale-[0.98] transition-all"
-                >
-                    <Send className="w-4 h-4 shrink-0" />
-                    Cotizar
-                </Link>
             </div>
         </div>
     );
