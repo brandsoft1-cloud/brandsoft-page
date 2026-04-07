@@ -1,0 +1,39 @@
+---
+title: "System design en entrevistas: guía práctica 2026"
+description: "Framework paso a paso para entrevistas de diseño de sistemas: requisitos, estimación, diagrama y profundidad. Ideal para staff y senior."
+date: "2026-04-07"
+author: "Mauricio Forero"
+category: "Mentoría Tech"
+coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop"
+keywords:
+  - system design entrevista
+  - diseño de sistemas software
+  - entrevista staff engineer
+  - arquitectura distribuida entrevista
+---
+
+Una entrevista de *system design* no es un examen de dibujo: es una conversación estructurada. Esta guía te da un **guión de 35–45 minutos** que puedes practicar en mentorías o con un compañero.
+
+## Fase A — Aclarar el producto (5–8 min)
+
+Pregunta por usuarios, lectura vs escritura, latencia aceptable, consistencia fuerte vs eventual, retención de datos y compliance. Anota supuestos en voz alta.
+
+## Fase B — Estimación “de orden de magnitud”
+
+Usuarios activos, QPS pico, tamaño de objetos, ancho de banda y almacenamiento anual. No buscan matemática perfecta; buscan **sentido común numérico**.
+
+## Fase C — API y modelo de datos
+
+Endpoints REST o eventos, esquema de tablas o documentos, índices y particionamiento. Explica por qué eliges SQL vs NoSQL en *este* caso.
+
+## Fase D — Componentes y escala
+
+Balanceadores, app servers, caché (Redis), colas (Kafka/SQS), CDN, búsqueda (OpenSearch). Para cada uno: qué problema resuelve y cómo falla.
+
+## Fase E — Observabilidad y operación
+
+Métricas, trazas, logs, *rate limiting*, *circuit breaker*, plan de despliegue canario.
+
+En consultorías de carrera solemos **grabar un mock** y devolver una lista priorizada de mejoras. Si te preparas para Meta, Uber o startups latinoamericanas, el ritmo cambia: ajustamos el nivel de profundidad.
+
+**Sigue leyendo:** [algoritmos y complejidad](/blog/algoritmos-entrevistas-tech-complejidad) y el pilar [/mentorias/ingenieria-software](/mentorias/ingenieria-software).

@@ -6,7 +6,11 @@ import { Calendar, User, ChevronRight } from 'lucide-react';
 
 export const metadata = {
     title: 'Blog SEO B2B & Desarrollo | BrandSoft',
-    description: 'Estrategias de crecimiento, desarrollo de software premium con Next.js y SEO técnico.'
+    description:
+        'Estrategias de crecimiento, desarrollo con Next.js, SEO técnico y guías de mentoría para entrevistas tech, marketing y finanzas freelance.',
+    alternates: {
+        canonical: '/blog',
+    },
 };
 
 export default async function BlogIndex() {
@@ -22,9 +26,15 @@ export default async function BlogIndex() {
                     <h1 className="font-heading text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter">
                         CONOCIMIENTO <span className="text-violet-500 italic">B2B</span>
                     </h1>
-                    <p className="text-xl text-gray-400 max-w-2xl font-light">
+                    <p className="text-xl text-gray-400 max-w-2xl font-light mb-6">
                         Artículos y estrategias para dominar Google, automatizar procesos y escalar tu software.
                     </p>
+                    <Link
+                        href="/mentorias"
+                        className="inline-flex items-center gap-2 text-violet-400 font-bold text-sm uppercase tracking-widest hover:text-white transition-colors"
+                    >
+                        Hub de mentorías y consultoría de carrera →
+                    </Link>
                 </div>
             </section>
 
