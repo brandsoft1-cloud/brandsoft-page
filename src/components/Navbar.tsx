@@ -161,7 +161,7 @@ export default function Navbar() {
                         <Link href="/casos-de-exito" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
                         <Link href="/#founder" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link>
                         <a
-                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú de la web y quiero cotizar.')}
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú web y quiero cotizar un servicio: software IA, SEO/GEO o leads B2B.')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap border-l border-white/10 ml-2 pl-5"
@@ -220,7 +220,7 @@ export default function Navbar() {
                         <Link href="/casos-de-exito" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
                         <Link href="/#founder" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Nosotros</Link>
                         <a
-                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero cotizar.')}
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero cotizar un servicio: software IA, SEO/GEO o leads B2B.')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block px-3 py-2 text-emerald-400 font-black uppercase text-sm"

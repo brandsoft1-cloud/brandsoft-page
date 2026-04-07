@@ -25,7 +25,9 @@ export default function WhatsAppWidget() {
             });
         }
         window.open(
-            whatsAppHref('Hola Mauricio, vengo de la web de BrandSoft y quiero cotizar un proyecto / asesoría.'),
+            whatsAppHref(
+                'Hola Mauricio, vengo de la web de BrandSoft y quiero cotizar un servicio (software IA, SEO/GEO o leads B2B).'
+            ),
             '_blank'
         );
     };
