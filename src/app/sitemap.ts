@@ -35,6 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${baseUrl}/mentorias/ingenieria-software`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
         { url: `${baseUrl}/mentorias/marketing-digital`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
         { url: `${baseUrl}/mentorias/finanzas`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
+        { url: `${baseUrl}/mentorias/inteligencia-artificial-empleo`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
+        { url: `${baseUrl}/mentorias/inteligencia-emocional-laboral`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
     ];
     corePages.forEach(pushUrl);
 
