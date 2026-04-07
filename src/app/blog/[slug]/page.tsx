@@ -5,7 +5,8 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ChevronLeft, Calendar, User, Tag } from 'lucide-react';
+import { ChevronLeft, Calendar, User, Tag, MessageCircle } from 'lucide-react';
+import { whatsAppHref } from '@/lib/contact';
 
 export async function generateStaticParams() {
     const posts = await getAllPosts();
@@ -21,9 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return { title: 'Post no encontrado' };
     }
 
+    const keywords = post.frontmatter.keywords as string[] | undefined;
+
     return {
         title: `${post.frontmatter.title} | BrandSoft`,
         description: post.frontmatter.description,
+        keywords,
+        alternates: {
+            canonical: `/blog/${post.slug}`,
+        },
+        openGraph: {
+            title: post.frontmatter.title,
+            description: post.frontmatter.description,
+            type: 'article',
+        },
     };
 }
 
@@ -86,14 +98,33 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </article>
 
             {/* Banner CTA */}
-            <section className="py-24 border-t border-white/10 bg-violet-600/5 relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square bg-violet-500/10 blur-[100px] rounded-full pointer-events-none" />
+            <section className="py-24 border-t border-white/10 bg-gradient-to-b from-violet-950/40 to-black relative overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
                 <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-black uppercase mb-6 italic">¿Listo para escalar?</h2>
-                    <p className="text-xl text-gray-400 mb-10 font-light">Implementamos la misma tecnología que acabas de leer para que tu empresa domine su mercado.</p>
-                    <Link href={`https://wa.me/573214567890?text=Hola, acabo de leer el blog: ${post.frontmatter.title} y quiero mejorar el SEO de mi negocio`} target="_blank" className="bg-white text-black px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-violet-500 hover:text-white transition-all transform hover:scale-105 inline-flex items-center gap-2">
-                        Hablar con Expertos
-                    </Link>
+                    <p className="text-emerald-400 text-xs font-black uppercase tracking-[0.25em] mb-4">Respuesta el mismo día</p>
+                    <h2 className="text-3xl md:text-5xl font-black uppercase mb-4 italic leading-tight">¿Aplicamos esto a tu negocio o carrera?</h2>
+                    <p className="text-xl text-gray-400 mb-10 font-light">
+                        Cotización, mentoría o desarrollo: elige canal y te atendemos sin vueltas.
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a
+                            href={whatsAppHref(
+                                `Acabo de leer en el blog: "${post.frontmatter.title}" y quiero hablar con BrandSoft.`
+                            )}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest shadow-xl shadow-emerald-600/30 transition-all hover:scale-[1.02] inline-flex items-center justify-center gap-2"
+                        >
+                            <MessageCircle className="w-5 h-5" />
+                            WhatsApp ahora
+                        </a>
+                        <Link
+                            href="/#contacto"
+                            className="w-full sm:w-auto border-2 border-white/25 hover:border-white/50 text-white px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest transition-all inline-flex items-center justify-center"
+                        >
+                            Dejar mis datos
+                        </Link>
+                    </div>
                 </div>
             </section>
 

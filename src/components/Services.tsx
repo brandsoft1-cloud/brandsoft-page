@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, Megaphone, Code, BrainCircuit } from 'lucide-react';
+import Link from 'next/link';
+import { Sparkles, Megaphone, Code, BrainCircuit, ArrowRight } from 'lucide-react';
 
 const services = [
     {
@@ -79,7 +80,14 @@ export default function Services() {
                                 <service.icon className="w-7 h-7" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-                            <p className="text-gray-400">{service.description}</p>
+                            <p className="text-gray-400 mb-6">{service.description}</p>
+                            <Link
+                                href="/#contacto"
+                                className="inline-flex items-center gap-2 text-sm font-bold text-violet-400 hover:text-white transition-colors group/cta"
+                            >
+                                Quiero asesoría gratis
+                                <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform" />
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

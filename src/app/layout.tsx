@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -52,10 +53,11 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark scroll-smooth">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased bg-black text-white font-sans`}
+        className={`${inter.variable} ${outfit.variable} antialiased bg-black text-white font-sans pb-[5.5rem] lg:pb-0`}
       >
         <SchemaOrg />
         {children}
+        <StickyMobileCta />
         <WhatsAppWidget />
       </body>
     </html>

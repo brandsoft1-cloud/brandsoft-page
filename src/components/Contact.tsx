@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, Send, MessageCircle } from 'lucide-react';
+import { whatsAppHref, PHONE_DISPLAY } from '@/lib/contact';
 
 export default function Contact() {
     return (
@@ -17,11 +18,34 @@ export default function Contact() {
                         viewport={{ once: true }}
                     >
                         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-                            ¿Listo para dar el <br /> <span className="text-violet-400">siguiente paso?</span>
+                            Hablemos <span className="text-emerald-400">hoy</span> de tu proyecto
                         </h2>
-                        <p className="text-xl text-gray-400 mb-10">
-                            Impulsa tu negocio con soluciones de software a la medida e IA de vanguardia. Escríbenos y nuestro equipo analizará las mejores estrategias para tu empresa.
+                        <p className="text-xl text-gray-400 mb-4">
+                            No dejes el contacto para después: si tienes una idea, un bug de negocio o un reto de SEO o software,{' '}
+                            <span className="text-white font-semibold">priorizamos respuesta el mismo día</span>.
                         </p>
+                        <p className="text-emerald-400/90 font-bold text-sm uppercase tracking-widest mb-8">
+                            Asesoría inicial sin costo · sin letra pequeña
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-3 mb-10">
+                            <a
+                                href={whatsAppHref('Hola BrandSoft, quiero cotizar / asesoría. Les escribo desde el formulario de contacto de la web.')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wide shadow-lg shadow-emerald-600/25 transition-all"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                                Abrir WhatsApp
+                            </a>
+                            <a
+                                href="tel:+573213296957"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-white/15 hover:border-violet-500/40 text-white font-bold text-sm transition-all"
+                            >
+                                <Phone className="w-4 h-4" />
+                                Llamar {PHONE_DISPLAY}
+                            </a>
+                        </div>
 
                         <div className="space-y-6">
                             <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
@@ -30,7 +54,9 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-400">Correo Electrónico</div>
-                                    <div className="text-white font-medium">contacto@brandsoft.com.co</div>
+                                    <a href="mailto:contacto@brandsoft.com.co" className="text-white font-medium hover:text-violet-300">
+                                        contacto@brandsoft.com.co
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
@@ -38,8 +64,8 @@ export default function Contact() {
                                     <Phone className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <div className="text-sm text-gray-400">Llámanos (WhatsApp)</div>
-                                    <div className="text-white font-medium">+57 321 329 6957</div>
+                                    <div className="text-sm text-gray-400">WhatsApp / llamada</div>
+                                    <div className="text-white font-medium">{PHONE_DISPLAY}</div>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +75,10 @@ export default function Contact() {
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-black border border-white/10 rounded-3xl p-8"
+                        className="bg-black border border-violet-500/20 rounded-3xl p-8 shadow-xl shadow-violet-950/40"
                     >
+                        <p className="text-emerald-400 text-xs font-black uppercase tracking-widest mb-2">O déjanos tus datos</p>
+                        <h3 className="text-2xl font-bold text-white mb-6">Te contactamos en menos de 24 h</h3>
                         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
@@ -76,10 +104,24 @@ export default function Contact() {
                                     placeholder="Cuéntanos sobre tu proyecto..."
                                 ></textarea>
                             </div>
-                            <button className="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-violet-500/25">
-                                Enviar Mensaje
+                            <button
+                                type="button"
+                                className="w-full bg-violet-600 hover:bg-violet-500 text-white font-black uppercase text-sm tracking-wide py-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-violet-500/30"
+                            >
+                                Enviar y que me contacten
                                 <Send className="w-5 h-5" />
                             </button>
+                            <p className="text-center text-xs text-gray-500">
+                                ¿Urgente?{' '}
+                                <a
+                                    href={whatsAppHref('Es urgente, prefiero WhatsApp.')}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-emerald-400 font-bold hover:underline"
+                                >
+                                    Ir directo a WhatsApp
+                                </a>
+                            </p>
                         </form>
                     </motion.div>
 

@@ -13,6 +13,7 @@ import {
     ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
+import CtaConversionBand from '@/components/CtaConversionBand';
 
 const icons: Record<string, any> = {
     utensils: Utensils,
@@ -69,6 +70,12 @@ export default function SolutionsGrid() {
                         );
                     })}
                 </div>
+
+                <CtaConversionBand
+                    title="Tu sector no aparece arriba — igual te armamos el software"
+                    subtitle="Restaurantes, servicios, industria, logística: si facturas y tienes un proceso repetible, lo digitalizamos. Pregunta sin compromiso."
+                    whatsappContext="vi el sector de soluciones y quiero cotizar software a la medida."
+                />
             </div>
         </section>
     );

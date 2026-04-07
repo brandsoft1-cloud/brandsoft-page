@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { whatsAppHref } from '@/lib/contact';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -126,12 +127,31 @@ export default function Navbar() {
                                 )}
                             </AnimatePresence>
                         </div>
-                        <Link href="/blog" className={`transition-colors ${pathname === '/blog' ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
+                        <Link
+                            href="/mentorias"
+                            className={`transition-colors ${pathname?.startsWith('/mentorias') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}
+                        >
+                            Mentorías
+                        </Link>
+                        <Link href="/blog" className={`transition-colors ${pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
                         <Link href="/#casos" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
                         <Link href="/#founder" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link>
-                        <Link href="/#contacto" className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
-                            Contactar
-                        </Link>
+                        <div className="flex items-center gap-2 pl-2 border-l border-white/10 ml-1">
+                            <a
+                                href={whatsAppHref('Hola BrandSoft, escribo desde el menú de la web y quiero cotizar.')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap"
+                            >
+                                WhatsApp
+                            </a>
+                            <Link
+                                href="/#contacto"
+                                className="bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors border border-violet-400/30 whitespace-nowrap"
+                            >
+                                Cotizar
+                            </Link>
+                        </div>
                     </div>
 
                     <div className="md:hidden flex items-center">
@@ -172,10 +192,20 @@ export default function Navbar() {
                         <Link href="/soluciones/educacion" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Educación</Link>
                         <Link href="/soluciones" className="block pl-6 pr-3 py-2 text-violet-400 font-bold tracking-widest text-[10px] uppercase italic" onClick={() => setIsOpen(false)}>🔍 VER TODOS LOS SECTORES</Link>
                         <div className="border-t border-white/10 my-2"></div>
+                        <Link href="/mentorias" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Mentorías</Link>
                         <Link href="/blog" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Blog</Link>
                         <Link href="/#casos" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
                         <Link href="/#founder" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Nosotros</Link>
-                        <Link href="/#contacto" className="block px-3 py-2 text-violet-400 font-medium" onClick={() => setIsOpen(false)}>Contactar</Link>
+                        <a
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero cotizar.')}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-3 py-2 text-emerald-400 font-black uppercase text-sm"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            WhatsApp ahora
+                        </a>
+                        <Link href="/#contacto" className="block px-3 py-2 text-violet-400 font-bold" onClick={() => setIsOpen(false)}>Formulario de cotización</Link>
                     </div>
                 </motion.div>
             )}

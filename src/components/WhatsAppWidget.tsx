@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { whatsAppHref } from '@/lib/contact';
 
 export default function WhatsAppWidget() {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +24,14 @@ export default function WhatsAppWidget() {
                 'event_label': 'WhatsApp Widget'
             });
         }
-        window.open('https://wa.me/573213296957?text=Hola%20Mauricio,%20vengo%20de%20la%20web%20de%20BrandSoft%20y%20quiero%20cotizar%20un%20proyecto.', '_blank');
+        window.open(
+            whatsAppHref('Hola Mauricio, vengo de la web de BrandSoft y quiero cotizar un proyecto / asesoría.'),
+            '_blank'
+        );
     };
 
     return (
-        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4 pointer-events-none">
+        <div className="fixed bottom-24 right-4 sm:right-8 z-[100] flex flex-col items-end gap-4 pointer-events-none lg:bottom-8">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -91,7 +95,7 @@ export default function WhatsAppWidget() {
                             exit={{ opacity: 0, x: 20 }}
                             className="bg-white text-black px-4 py-2 rounded-full text-xs font-bold shadow-xl hidden md:block"
                         >
-                            ¿Tienes una idea en mente?
+                            ¿Cotización gratis hoy?
                         </motion.div>
                     )}
                 </AnimatePresence>

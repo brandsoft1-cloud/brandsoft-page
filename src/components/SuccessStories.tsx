@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import CtaConversionBand from '@/components/CtaConversionBand';
 
 type SuccessCase = {
     name: string;
@@ -139,6 +140,12 @@ export default function SuccessStories() {
                         </motion.div>
                     ))}
                 </div>
+
+                <CtaConversionBand
+                    title="¿Quieres resultados como estos para tu marca?"
+                    subtitle="Cuéntanos tu sector y te devolvemos una propuesta clara: alcance, tiempos y próximo paso. Sin humo."
+                    whatsappContext="vi los casos de éxito en la web y quiero cotizar algo similar."
+                />
             </div>
         </section>
     );

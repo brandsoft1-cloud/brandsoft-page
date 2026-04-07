@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Target, Zap, Linkedin } from 'lucide-react';
+import Link from 'next/link';
+import { Award, Target, Zap, Linkedin, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import { whatsAppHref } from '@/lib/contact';
 
 export default function Founder() {
     return (
@@ -74,15 +76,32 @@ export default function Founder() {
                             </div>
                         </div>
 
-                        <a
-                            href="https://www.linkedin.com/in/mauricio-forero/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white px-6 py-3 rounded-full font-medium transition-colors"
-                        >
-                            <Linkedin className="w-5 h-5" />
-                            Conectar en LinkedIn
-                        </a>
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                            <a
+                                href={whatsAppHref('Hola Mauricio, te escribo desde la sección Nosotros / Founder y quiero hablar de un proyecto.')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-full font-black text-sm uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                                WhatsApp con Mauricio
+                            </a>
+                            <Link
+                                href="/#contacto"
+                                className="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-500 text-white px-6 py-3 rounded-full font-bold text-sm transition-colors"
+                            >
+                                Formulario de contacto
+                            </Link>
+                            <a
+                                href="https://www.linkedin.com/in/mauricio-forero/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white px-6 py-3 rounded-full font-medium transition-colors"
+                            >
+                                <Linkedin className="w-5 h-5" />
+                                LinkedIn
+                            </a>
+                        </div>
                     </motion.div>
 
                 </div>
