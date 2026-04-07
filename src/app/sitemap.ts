@@ -21,6 +21,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${baseUrl}/mentorias/marketing-digital`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
         { url: `${baseUrl}/mentorias/finanzas`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
         { url: `${baseUrl}/soluciones`, lastModified, changeFrequency: 'daily', priority: 1 },
+        { url: `${baseUrl}/desarrollo-software-ia`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
+        { url: `${baseUrl}/posicionamiento-seo-geo`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
+        { url: `${baseUrl}/generacion-leads-b2b`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
+        { url: `${baseUrl}/industrias`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/industrias/ecommerce`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
+        { url: `${baseUrl}/industrias/finanzas`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
+        { url: `${baseUrl}/industrias/salud`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
+        { url: `${baseUrl}/recursos`, lastModified, changeFrequency: 'weekly', priority: 0.88 },
+        { url: `${baseUrl}/casos-de-exito`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     ];
 
     // 2. BLOG MDX POSTS

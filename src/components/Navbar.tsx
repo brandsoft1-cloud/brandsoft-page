@@ -54,8 +54,32 @@ export default function Navbar() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 10 }}
-                                        className="absolute top-full left-0 w-64 bg-black border border-white/10 rounded-2xl shadow-xl overflow-hidden py-2"
+                                        className="absolute top-full left-0 w-72 bg-black border border-white/10 rounded-2xl shadow-xl overflow-hidden py-2"
                                     >
+                                        <p className="px-4 pt-2 pb-1 text-[10px] font-black uppercase tracking-widest text-emerald-500/90">
+                                            Ecosistema B2B (hub)
+                                        </p>
+                                        <Link href="/desarrollo-software-ia" className="block px-4 py-2 text-sm text-white hover:bg-emerald-500/10 transition-colors font-semibold">
+                                            Desarrollo software + IA
+                                        </Link>
+                                        <Link href="/posicionamiento-seo-geo" className="block px-4 py-2 text-sm text-white hover:bg-emerald-500/10 transition-colors font-semibold">
+                                            SEO técnico + GEO / LLMO
+                                        </Link>
+                                        <Link href="/generacion-leads-b2b" className="block px-4 py-2 text-sm text-white hover:bg-emerald-500/10 transition-colors font-semibold">
+                                            Generación leads B2B
+                                        </Link>
+                                        <Link href="/industrias" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors">
+                                            → Industrias (ecommerce, finanzas, salud)
+                                        </Link>
+                                        <Link href="/recursos" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors">
+                                            → Recursos y lead magnets
+                                        </Link>
+                                        <Link href="/casos-de-exito" className="block px-4 py-2 text-xs text-gray-400 hover:bg-white/10 hover:text-white transition-colors border-b border-white/5 mb-1">
+                                            → Casos de éxito
+                                        </Link>
+                                        <p className="px-4 pt-2 pb-1 text-[10px] font-black uppercase tracking-widest text-gray-600">
+                                            Servicios (clásico)
+                                        </p>
                                         <Link href="/desarrollo-web" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
                                             Desarrollo Web y Apps
                                         </Link>
@@ -134,24 +158,16 @@ export default function Navbar() {
                             Mentorías
                         </Link>
                         <Link href="/blog" className={`transition-colors ${pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
-                        <Link href="/#casos" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
+                        <Link href="/casos-de-exito" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
                         <Link href="/#founder" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link>
-                        <div className="flex items-center gap-2 pl-2 border-l border-white/10 ml-1">
-                            <a
-                                href={whatsAppHref('Hola BrandSoft, escribo desde el menú de la web y quiero cotizar.')}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap"
-                            >
-                                WhatsApp
-                            </a>
-                            <Link
-                                href="/#contacto"
-                                className="bg-violet-600 hover:bg-violet-500 text-white px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors border border-violet-400/30 whitespace-nowrap"
-                            >
-                                Cotizar
-                            </Link>
-                        </div>
+                        <a
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú de la web y quiero cotizar.')}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap border-l border-white/10 ml-2 pl-5"
+                        >
+                            WhatsApp
+                        </a>
                     </div>
 
                     <div className="md:hidden flex items-center">
@@ -174,6 +190,13 @@ export default function Navbar() {
                     className="md:hidden bg-black/95 backdrop-blur-lg border-b border-white/10 max-h-[80vh] overflow-y-auto"
                 >
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <div className="px-3 py-2 text-sm text-gray-500 font-bold uppercase tracking-wider">B2B — demanda</div>
+                        <Link href="/desarrollo-software-ia" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• Software + IA</Link>
+                        <Link href="/posicionamiento-seo-geo" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• SEO + GEO</Link>
+                        <Link href="/generacion-leads-b2b" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• Leads B2B</Link>
+                        <Link href="/industrias" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Industrias</Link>
+                        <Link href="/recursos" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Recursos</Link>
+                        <Link href="/casos-de-exito" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Casos de éxito</Link>
                         <div className="px-3 py-2 text-sm text-gray-500 font-bold uppercase tracking-wider">Servicios</div>
                         <Link href="/desarrollo-web" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Desarrollo Web y Apps</Link>
                         <Link href="/desarrollo-web/ecommerce" className="block pl-10 pr-3 py-1 text-xs text-gray-500 hover:text-white" onClick={() => setIsOpen(false)}>↳ Ecommerce</Link>
@@ -194,7 +217,7 @@ export default function Navbar() {
                         <div className="border-t border-white/10 my-2"></div>
                         <Link href="/mentorias" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Mentorías</Link>
                         <Link href="/blog" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Blog</Link>
-                        <Link href="/#casos" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
+                        <Link href="/casos-de-exito" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
                         <Link href="/#founder" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Nosotros</Link>
                         <a
                             href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero cotizar.')}
@@ -205,7 +228,6 @@ export default function Navbar() {
                         >
                             WhatsApp ahora
                         </a>
-                        <Link href="/#contacto" className="block px-3 py-2 text-violet-400 font-bold" onClick={() => setIsOpen(false)}>Formulario de cotización</Link>
                     </div>
                 </motion.div>
             )}

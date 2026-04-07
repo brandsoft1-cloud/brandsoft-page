@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Code, TrendingUp, MessageCircle, Zap } from 'lucide-react';
 import Link from 'next/link';
+import { Sparkles, Code, TrendingUp, MessageCircle, Calendar, ClipboardCheck } from 'lucide-react';
 import { whatsAppHref } from '@/lib/contact';
 
 export default function Hero() {
@@ -41,9 +41,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="max-w-2xl mx-auto text-xl text-gray-400 mb-4"
+                    className="max-w-2xl mx-auto text-xl text-gray-300 mb-4 font-medium"
                 >
-                    Creamos soluciones modernas y personalizadas para llevar tu negocio al siguiente nivel. Posicionamiento, innovación y software a medida.
+                    <span className="text-white">IA aplicada al negocio</span>,{' '}
+                    <span className="text-white">SEO técnico + GEO</span> en motores generativos y{' '}
+                    <span className="text-white">leads B2B</span> con ROI medible — para CTOs, CMOs y equipos de revenue.
                 </motion.p>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -51,40 +53,61 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.45 }}
                     className="text-emerald-400 font-bold text-sm uppercase tracking-widest mb-10"
                 >
-                    Diagnóstico express sin costo — te respondemos hoy
+                    Agende demostración o pida auditoría gratuita — respuesta prioritaria
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xl mx-auto w-full"
+                    className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-2xl mx-auto w-full"
                 >
                     <a
-                        href={whatsAppHref('Hola BrandSoft, quiero una cotización / diagnóstico gratuito desde la web.')}
+                        href={whatsAppHref('Hola BrandSoft, quiero agendar una demostración (desde la home).')}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group px-8 py-4 bg-emerald-600 text-white rounded-full font-black uppercase text-sm tracking-wide hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 animate-pulse sm:animate-none sm:hover:scale-[1.02]"
+                        className="group px-8 py-4 bg-violet-600 text-white rounded-full font-black uppercase text-sm tracking-wide hover:bg-violet-500 transition-all flex items-center justify-center gap-2 shadow-xl shadow-violet-600/30 sm:hover:scale-[1.02]"
                     >
-                        <MessageCircle className="w-5 h-5" />
-                        WhatsApp — respuesta hoy
+                        <Calendar className="w-5 h-5" />
+                        Agendar demostración
                     </a>
-                    <Link
-                        href="#contacto"
-                        className="group px-8 py-4 bg-violet-600 text-white rounded-full font-black uppercase text-sm tracking-wide hover:bg-violet-500 transition-all flex items-center justify-center gap-2 shadow-xl shadow-violet-500/25"
-                    >
-                        Cotización por formulario
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
                     <a
-                        href={whatsAppHref('Quiero agendar una llamada corta con BrandSoft.')}
+                        href={whatsAppHref('Hola BrandSoft, solicito una auditoría gratuita (SEO/IA/leads) desde la home.')}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-8 py-4 border-2 border-white/20 text-white rounded-full font-bold text-sm hover:border-emerald-500/50 hover:bg-white/5 transition-all flex items-center justify-center gap-2"
+                        className="group px-8 py-4 bg-emerald-600 text-white rounded-full font-black uppercase text-sm tracking-wide hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30"
                     >
-                        <Zap className="w-4 h-4 text-emerald-400" />
-                        Llamada rápida
+                        <ClipboardCheck className="w-5 h-5" />
+                        Auditoría gratuita
                     </a>
+                    <a
+                        href={whatsAppHref('Escribo desde la home y prefiero WhatsApp libre.')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-4 border-2 border-white/20 text-white rounded-full font-bold text-sm hover:border-white/40 transition-all flex items-center justify-center gap-2"
+                    >
+                        <MessageCircle className="w-5 h-5 text-emerald-400" />
+                        WhatsApp
+                    </a>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.75 }}
+                    className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-widest text-gray-500"
+                >
+                    <Link href="/desarrollo-software-ia" className="hover:text-violet-400">
+                        IA
+                    </Link>
+                    <Link href="/posicionamiento-seo-geo" className="hover:text-violet-400">
+                        SEO / GEO
+                    </Link>
+                    <Link href="/generacion-leads-b2b" className="hover:text-violet-400">
+                        Leads B2B
+                    </Link>
+                    <Link href="/recursos" className="hover:text-violet-400">
+                        Recursos
+                    </Link>
                 </motion.div>
 
                 {/* Feature Highlights */}

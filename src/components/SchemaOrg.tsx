@@ -1,80 +1,101 @@
 'use client';
 
+const BASE = 'https://brandsoft.com.co';
+
+/**
+ * @graph: Organization + WebSite para entidad clara frente a Google.
+ * Amplía sameAs con URLs reales de Clutch/G2 cuando existan.
+ */
 export default function SchemaOrg() {
     const schema = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "BrandSoft",
-        "url": "https://brandsoft.com.co",
-        "logo": "https://brandsoft.com.co/logo.png",
-        "image": "https://brandsoft.com.co/og-image.jpg",
-        "description": "Agencia de software experto en Next.js, SEO Técnico e Inteligencia Artificial impulsada por Sendell. Transformación digital de alto nivel para empresas B2B.",
-        "telephone": "+573213296957",
-        "priceRange": "$$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Bogotá, Colombia",
-            "addressLocality": "Bogotá",
-            "addressRegion": "Cundinamarca",
-            "postalCode": "110111",
-            "addressCountry": "CO"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 4.60971,
-            "longitude": -74.08175
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/mauricio-forero-acosta"
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'Organization',
+                '@id': `${BASE}/#organization`,
+                name: 'BrandSoft',
+                alternateName: 'BrandSoft Colombia',
+                url: BASE,
+                logo: `${BASE}/logo.png`,
+                image: `${BASE}/og-image.jpg`,
+                description:
+                    'Software con inteligencia artificial, SEO técnico, GEO/LLMO y generación de leads B2B para empresas en Colombia y Latinoamérica.',
+                telephone: '+573213296957',
+                email: 'contacto@brandsoft.com.co',
+                priceRange: '$$$',
+                address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Bogotá',
+                    addressRegion: 'Cundinamarca',
+                    postalCode: '110111',
+                    addressCountry: 'CO',
+                },
+                geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 4.60971,
+                    longitude: -74.08175,
+                },
+                sameAs: [
+                    'https://www.linkedin.com/in/mauricio-forero-acosta',
+                    /* 'https://clutch.co/profile/...', */
+                    /* 'https://www.g2.com/products/...', */
+                ],
+                knowsAbout: [
+                    'Inteligencia artificial aplicada',
+                    'Desarrollo de software a la medida',
+                    'SEO técnico',
+                    'Generative Engine Optimization',
+                    'Account-based marketing',
+                    'Generación de leads B2B',
+                ],
+                hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'Servicios BrandSoft',
+                    itemListElement: [
+                        {
+                            '@type': 'Offer',
+                            itemOffered: {
+                                '@type': 'Service',
+                                name: 'Desarrollo de software con IA',
+                                url: `${BASE}/desarrollo-software-ia`,
+                                description:
+                                    'Agentes conversacionales, RPA y analítica predictiva para empresas.',
+                            },
+                        },
+                        {
+                            '@type': 'Offer',
+                            itemOffered: {
+                                '@type': 'Service',
+                                name: 'Posicionamiento SEO y GEO',
+                                url: `${BASE}/posicionamiento-seo-geo`,
+                                description:
+                                    'Core Web Vitals, SEO técnico y visibilidad en motores generativos.',
+                            },
+                        },
+                        {
+                            '@type': 'Offer',
+                            itemOffered: {
+                                '@type': 'Service',
+                                name: 'Generación de leads B2B',
+                                url: `${BASE}/generacion-leads-b2b`,
+                                description: 'ABM, prospección automatizada y MQL/SQL con CRM.',
+                            },
+                        },
+                    ],
+                },
+            },
+            {
+                '@type': 'WebSite',
+                '@id': `${BASE}/#website`,
+                url: BASE,
+                name: 'BrandSoft',
+                inLanguage: 'es-CO',
+                publisher: { '@id': `${BASE}/#organization` },
+            },
         ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Servicios de Tecnología",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Desarrollo de Software a la Medida (Next.js)",
-                        "description": "Aplicaciones web escalables y optimizadas para máxima velocidad y SEO."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "SEO Técnico y CRO",
-                        "description": "Auditorías profundas y optimización de conversión para generar leads constantes."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Agentes de Inteligencia Artificial (Sendell)",
-                        "description": "Integración de chatbots inteligentes y automatización operacional con IA."
-                    }
-                }
-            ]
-        }
     };
 
     return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     );
 }
