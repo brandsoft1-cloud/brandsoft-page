@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Link from "next/link";
 import { Search, Activity, Lock, CheckCircle } from "lucide-react";
 import { Metadata } from "next";
+import { whatsAppHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
     title: 'Consultoría SEO Técnico y Core Web Vitals | BrandSoft',
@@ -30,7 +31,7 @@ export default function SeoTecnicoPage() {
                     <p className="text-xl md:text-2xl text-gray-400 max-w-4xl font-light mb-12">
                         Auditorías profundas de Core Web Vitals, corrección de renderización, y arquitectura de silos. Dejamos tu código impecable para que Google lo priorice.
                     </p>
-                    <Link href={`https://wa.me/573214567890?text=Hola, quiero una auditoría de SEO Técnico para mi empresa`} target="_blank" className="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-violet-500 hover:text-white transition-all transform hover:scale-105">
+                    <Link href={whatsAppHref("Hola BrandSoft, quiero el servicio de auditoría SEO técnico para mi empresa. Vengo de la landing SEO Técnico.")} target="_blank" className="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-violet-500 hover:text-white transition-all transform hover:scale-105">
                         Agendar Auditoría Inicial
                     </Link>
                 </div>

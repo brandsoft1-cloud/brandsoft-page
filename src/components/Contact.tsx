@@ -115,7 +115,7 @@ export default function Contact() {
                             <p className="text-center text-xs text-gray-500">
                                 ¿Urgente?{' '}
                                 <a
-                                    href={whatsAppHref('Es urgente, prefiero WhatsApp.')}
+                                    href={whatsAppHref('Hola BrandSoft, quiero atención urgente para cotizar un servicio. Escribo desde la sección de contacto.')}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-emerald-400 font-bold hover:underline"

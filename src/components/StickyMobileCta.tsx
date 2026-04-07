@@ -19,7 +19,7 @@ export default function StickyMobileCta() {
             </p>
             <div className="max-w-md mx-auto">
                 <a
-                    href={whatsAppHref()}
+                    href={whatsAppHref('Hola BrandSoft, quiero cotizar el servicio de software IA / SEO / leads B2B. Escribo desde el botón móvil fijo.')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all"

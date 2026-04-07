@@ -95,7 +95,7 @@ export default function LeadQualifyChat() {
                                 ))}
                             </div>
                             <a
-                                href={whatsAppHref('Prefiero saltar el chat y escribir directo.')}
+                                href={whatsAppHref('Hola BrandSoft, quiero cotizar un servicio y prefiero escribir directo por WhatsApp. Vengo del chat de calificación.')}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"

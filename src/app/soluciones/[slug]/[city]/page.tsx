@@ -16,6 +16,7 @@ import {
     ZapIcon
 } from "lucide-react";
 import Link from "next/link";
+import { whatsAppHref } from "@/lib/contact";
 
 interface PageProps {
     params: Promise<{
@@ -90,7 +91,7 @@ export default async function VerticalCityPage({ params }: PageProps) {
                         <Link href="#contacto" className="bg-white text-black px-12 py-6 rounded-full font-black hover:bg-violet-500 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-white/5 text-lg">
                             EMPEZAR PROYECTO HOY
                         </Link>
-                        <Link href={`https://wa.me/573214567890?text=Hola, quiero una demo para mi negocio de ${vertical.name.toLowerCase()} en ${city.name}`} className="border border-white/20 px-12 py-6 rounded-full font-bold hover:bg-white/5 transition-all flex items-center gap-2 box-border text-lg">
+                        <Link href={whatsAppHref(`Hola BrandSoft, quiero el servicio para ${vertical.name.toLowerCase()} en ${city.name}. Solicito demo y propuesta.`)} className="border border-white/20 px-12 py-6 rounded-full font-bold hover:bg-white/5 transition-all flex items-center gap-2 box-border text-lg">
                             WHATSAPP DIRECTO
                         </Link>
                     </div>

@@ -81,7 +81,7 @@ export default function Hero() {
                         Auditoría gratuita
                     </a>
                     <a
-                        href={whatsAppHref('Escribo desde la home y prefiero WhatsApp libre.')}
+                        href={whatsAppHref('Hola BrandSoft, quiero cotizar uno de sus servicios (software IA, SEO/GEO o leads B2B). Escribo desde la home.')}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-8 py-4 border-2 border-white/20 text-white rounded-full font-bold text-sm hover:border-white/40 transition-all flex items-center justify-center gap-2"

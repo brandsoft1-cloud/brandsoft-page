@@ -4,70 +4,90 @@ import { getAllPosts } from '@/lib/mdx';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://brandsoft.com.co';
-    const lastModified = new Date();
+    const now = new Date();
+    const entries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-    // 1. PÁGINAS CORE (YA ESTABLECIDAS)
+    const pushUrl = (entry: MetadataRoute.Sitemap[number]) => {
+        entries.set(entry.url, entry);
+    };
+
+    // 1) PÁGINAS CORE / MONEY PAGES (alta intención comercial)
     const corePages: MetadataRoute.Sitemap = [
-        { url: baseUrl, lastModified, changeFrequency: 'daily', priority: 1 },
-        { url: `${baseUrl}/desarrollo-web`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
-        { url: `${baseUrl}/desarrollo-web/ecommerce`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/marketing-digital`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
-        { url: `${baseUrl}/marketing-digital/seo-tecnico`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/ia-automatizaciones`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/agente-ai`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
-        { url: `${baseUrl}/blog`, lastModified, changeFrequency: 'daily', priority: 0.9 },
-        { url: `${baseUrl}/mentorias`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
-        { url: `${baseUrl}/mentorias/ingenieria-software`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/mentorias/marketing-digital`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/mentorias/finanzas`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/soluciones`, lastModified, changeFrequency: 'daily', priority: 1 },
-        { url: `${baseUrl}/desarrollo-software-ia`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
-        { url: `${baseUrl}/posicionamiento-seo-geo`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
-        { url: `${baseUrl}/generacion-leads-b2b`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
-        { url: `${baseUrl}/industrias`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/industrias/ecommerce`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
-        { url: `${baseUrl}/industrias/finanzas`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
-        { url: `${baseUrl}/industrias/salud`, lastModified, changeFrequency: 'monthly', priority: 0.85 },
-        { url: `${baseUrl}/recursos`, lastModified, changeFrequency: 'weekly', priority: 0.88 },
-        { url: `${baseUrl}/casos-de-exito`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+        { url: baseUrl, lastModified: now, changeFrequency: 'daily', priority: 1 },
+        { url: `${baseUrl}/desarrollo-software-ia`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
+        { url: `${baseUrl}/posicionamiento-seo-geo`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
+        { url: `${baseUrl}/generacion-leads-b2b`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
+        { url: `${baseUrl}/industrias`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
+        { url: `${baseUrl}/industrias/ecommerce`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
+        { url: `${baseUrl}/industrias/finanzas`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
+        { url: `${baseUrl}/industrias/salud`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
+        { url: `${baseUrl}/recursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/casos-de-exito`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
+        { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+        { url: `${baseUrl}/mentorias`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/mentorias/ingenieria-software`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
+        { url: `${baseUrl}/mentorias/marketing-digital`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
+        { url: `${baseUrl}/mentorias/finanzas`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
     ];
+    corePages.forEach(pushUrl);
 
-    // 2. BLOG MDX POSTS
+    // 2) RUTAS LEGACY / APOYO (siguen captando intención y enlaces)
+    const legacyPages: MetadataRoute.Sitemap = [
+        { url: `${baseUrl}/desarrollo-web`, lastModified: now, changeFrequency: 'weekly', priority: 0.82 },
+        { url: `${baseUrl}/desarrollo-web/ecommerce`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/marketing-digital`, lastModified: now, changeFrequency: 'weekly', priority: 0.82 },
+        { url: `${baseUrl}/marketing-digital/seo-tecnico`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/ia-automatizaciones`, lastModified: now, changeFrequency: 'weekly', priority: 0.88 },
+        { url: `${baseUrl}/agente-ai`, lastModified: now, changeFrequency: 'monthly', priority: 0.72 },
+        { url: `${baseUrl}/web-ia`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+        { url: `${baseUrl}/soluciones`, lastModified: now, changeFrequency: 'daily', priority: 0.95 },
+    ];
+    legacyPages.forEach(pushUrl);
+
+    // 3) BLOG MDX
     const posts = await getAllPosts();
-    const blogPostsURLs: MetadataRoute.Sitemap = posts.map(post => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.frontmatter.date || lastModified),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-    }));
-
-    // 3. SERVICIOS x CIUDAD (SEO PROGRAMÁTICO 1.0)
-    const serviceCityURLs: MetadataRoute.Sitemap = SERVICES.flatMap(service =>
-        CITIES.map(city => ({
-            url: `${baseUrl}/servicios/${service.slug}/${city.slug}`,
-            lastModified,
+    posts.forEach((post) => {
+        pushUrl({
+            url: `${baseUrl}/blog/${post.slug}`,
+            lastModified: new Date(post.frontmatter.date || now),
             changeFrequency: 'monthly',
-            priority: 0.7,
-        }))
-    );
+            priority: 0.72,
+        });
+    });
 
-    // 4. SOLUCIONES VERTICALES (SEO PROGRAMÁTICO NICHOS)
-    const verticalURLs: MetadataRoute.Sitemap = VERTICALS.map(vertical => ({
+    // 4) SEO PROGRAMÁTICO SERVICIOS x CIUDAD
+    SERVICES.forEach((service) => {
+        CITIES.forEach((city) => {
+            pushUrl({
+            url: `${baseUrl}/servicios/${service.slug}/${city.slug}`,
+                lastModified: now,
+            changeFrequency: 'monthly',
+                priority: 0.7,
+            });
+        });
+    });
+
+    // 5) SOLUCIONES VERTICALES (hub)
+    VERTICALS.forEach((vertical) => {
+        pushUrl({
         url: `${baseUrl}/soluciones/${vertical.slug}`,
-        lastModified,
+            lastModified: now,
         changeFrequency: 'weekly',
         priority: 0.9,
-    }));
+        });
+    });
 
-    // 5. SOLUCIONES VERTICALES x CIUDAD (SEO PROGRAMÁTICO 2.0)
-    const verticalCityURLs: MetadataRoute.Sitemap = VERTICALS.flatMap(vertical =>
-        CITIES.map(city => ({
+    // 6) SOLUCIONES VERTICALES x CIUDAD
+    VERTICALS.forEach((vertical) => {
+        CITIES.forEach((city) => {
+            pushUrl({
             url: `${baseUrl}/soluciones/${vertical.slug}/${city.slug}`,
-            lastModified,
+                lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.8,
-        }))
-    );
+            });
+        });
+    });
 
-    return [...corePages, ...blogPostsURLs, ...serviceCityURLs, ...verticalURLs, ...verticalCityURLs];
+    return Array.from(entries.values());
 }
