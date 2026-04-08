@@ -1,102 +1,132 @@
 import { MetadataRoute } from 'next';
 import { CITIES, SERVICES, VERTICALS } from '@/data/seo-config';
+import { INDUSTRIA_SLUGS } from '@/data/b2b-hub-structure';
+import { MENTORIA_PILLARS } from '@/data/mentoria-seo';
+import { PAGINAS_WEB_CIUDAD_SLUGS } from '@/data/paginas-web-ciudad';
 import { getAllPosts } from '@/lib/mdx';
-import { SITE_URL } from '@/lib/robots-config';
+import { getSitemapBaseUrl, safeLastModified, toAbsoluteUrl } from '@/lib/sitemap-utils';
+
+/** Regeneración periódica (Vercel): el XML se actualiza sin redeploy completo si cambia el contenido en runtime. */
+export const revalidate = 86400;
+
+/** Lectura de MDX con fs: forzar Node en ISR/serverless. */
+export const runtime = 'nodejs';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = SITE_URL;
+    const baseUrl = getSitemapBaseUrl();
     const now = new Date();
     const entries = new Map<string, MetadataRoute.Sitemap[number]>();
 
-    const pushUrl = (entry: MetadataRoute.Sitemap[number]) => {
-        entries.set(entry.url, entry);
+    const push = (entry: MetadataRoute.Sitemap[number]) => {
+        const normalizedUrl = entry.url.replace(/\/+$/, '') || entry.url;
+        entries.set(normalizedUrl, { ...entry, url: normalizedUrl });
     };
 
-    // 1) PÁGINAS CORE / MONEY PAGES (alta intención comercial)
-    const corePages: MetadataRoute.Sitemap = [
-        { url: baseUrl, lastModified: now, changeFrequency: 'daily', priority: 1 },
-        { url: `${baseUrl}/desarrollo-software-ia`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
-        { url: `${baseUrl}/posicionamiento-seo-geo`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
-        { url: `${baseUrl}/generacion-leads-b2b`, lastModified: now, changeFrequency: 'weekly', priority: 0.98 },
-        { url: `${baseUrl}/industrias`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
-        { url: `${baseUrl}/industrias/ecommerce`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
-        { url: `${baseUrl}/industrias/finanzas`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
-        { url: `${baseUrl}/industrias/salud`, lastModified: now, changeFrequency: 'monthly', priority: 0.88 },
-        { url: `${baseUrl}/recursos`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/como-posicionar-google-gratis`, lastModified: now, changeFrequency: 'weekly', priority: 0.94 },
-        { url: `${baseUrl}/paginas-web-colombia`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
-        { url: `${baseUrl}/paginas-web/bogota`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/paginas-web/medellin`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/paginas-web/cali`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/paginas-web/barranquilla`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/casos-de-exito`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
-        { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
-        { url: `${baseUrl}/mentorias`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/mentorias/ingenieria-software`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
-        { url: `${baseUrl}/mentorias/marketing-digital`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
-        { url: `${baseUrl}/mentorias/finanzas`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
-        { url: `${baseUrl}/mentorias/inteligencia-artificial-empleo`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
-        { url: `${baseUrl}/mentorias/inteligencia-emocional-laboral`, lastModified: now, changeFrequency: 'weekly', priority: 0.86 },
+    // ——— 1) Core / money pages ———
+    const corePaths: { path: string; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; priority: number }[] = [
+        { path: '/', changeFrequency: 'daily', priority: 1 },
+        { path: '/desarrollo-software-ia', changeFrequency: 'weekly', priority: 0.98 },
+        { path: '/posicionamiento-seo-geo', changeFrequency: 'weekly', priority: 0.98 },
+        { path: '/generacion-leads-b2b', changeFrequency: 'weekly', priority: 0.98 },
+        { path: '/industrias', changeFrequency: 'weekly', priority: 0.92 },
+        ...INDUSTRIA_SLUGS.map((slug) => ({
+            path: `/industrias/${slug}`,
+            changeFrequency: 'monthly' as const,
+            priority: 0.88,
+        })),
+        { path: '/recursos', changeFrequency: 'weekly', priority: 0.9 },
+        { path: '/como-posicionar-google-gratis', changeFrequency: 'weekly', priority: 0.94 },
+        { path: '/paginas-web-colombia', changeFrequency: 'weekly', priority: 0.95 },
+        ...PAGINAS_WEB_CIUDAD_SLUGS.map((city) => ({
+            path: `/paginas-web/${city}`,
+            changeFrequency: 'weekly' as const,
+            priority: 0.9,
+        })),
+        { path: '/casos-de-exito', changeFrequency: 'weekly', priority: 0.92 },
+        { path: '/blog', changeFrequency: 'daily', priority: 0.9 },
+        { path: '/mentorias', changeFrequency: 'weekly', priority: 0.9 },
+        ...MENTORIA_PILLARS.map((p) => ({
+            path: p.path,
+            changeFrequency: 'weekly' as const,
+            priority: 0.86,
+        })),
     ];
-    corePages.forEach(pushUrl);
 
-    // 2) RUTAS LEGACY / APOYO (siguen captando intención y enlaces)
-    const legacyPages: MetadataRoute.Sitemap = [
-        { url: `${baseUrl}/desarrollo-web`, lastModified: now, changeFrequency: 'weekly', priority: 0.82 },
-        { url: `${baseUrl}/desarrollo-web/ecommerce`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/marketing-digital`, lastModified: now, changeFrequency: 'weekly', priority: 0.82 },
-        { url: `${baseUrl}/marketing-digital/seo-tecnico`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${baseUrl}/ia-automatizaciones`, lastModified: now, changeFrequency: 'weekly', priority: 0.88 },
-        { url: `${baseUrl}/agente-ai`, lastModified: now, changeFrequency: 'monthly', priority: 0.72 },
-        { url: `${baseUrl}/web-ia`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-        { url: `${baseUrl}/soluciones`, lastModified: now, changeFrequency: 'daily', priority: 0.95 },
+    corePaths.forEach(({ path, changeFrequency, priority }) => {
+        push({
+            url: toAbsoluteUrl(path),
+            lastModified: now,
+            changeFrequency,
+            priority,
+        });
+    });
+
+    // ——— 2) Legacy / apoyo ———
+    const legacyPaths: { path: string; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; priority: number }[] = [
+        { path: '/desarrollo-web', changeFrequency: 'weekly', priority: 0.82 },
+        { path: '/desarrollo-web/ecommerce', changeFrequency: 'weekly', priority: 0.9 },
+        { path: '/marketing-digital', changeFrequency: 'weekly', priority: 0.82 },
+        { path: '/marketing-digital/seo-tecnico', changeFrequency: 'weekly', priority: 0.9 },
+        { path: '/ia-automatizaciones', changeFrequency: 'weekly', priority: 0.88 },
+        { path: '/agente-ai', changeFrequency: 'monthly', priority: 0.72 },
+        { path: '/web-ia', changeFrequency: 'weekly', priority: 0.8 },
+        { path: '/soluciones', changeFrequency: 'daily', priority: 0.95 },
     ];
-    legacyPages.forEach(pushUrl);
 
-    // 3) BLOG MDX
+    legacyPaths.forEach(({ path, changeFrequency, priority }) => {
+        push({
+            url: toAbsoluteUrl(path),
+            lastModified: now,
+            changeFrequency,
+            priority,
+        });
+    });
+
+    // ——— 3) Blog (MDX) ———
     const posts = await getAllPosts();
     posts.forEach((post) => {
-        pushUrl({
-            url: `${baseUrl}/blog/${post.slug}`,
-            lastModified: new Date(post.frontmatter.date || now),
+        push({
+            url: toAbsoluteUrl(`/blog/${post.slug}`),
+            lastModified: safeLastModified(post.frontmatter.date, now),
             changeFrequency: 'monthly',
             priority: 0.72,
         });
     });
 
-    // 4) SEO PROGRAMÁTICO SERVICIOS x CIUDAD
+    // ——— 4) Servicios × ciudad ———
     SERVICES.forEach((service) => {
         CITIES.forEach((city) => {
-            pushUrl({
-            url: `${baseUrl}/servicios/${service.slug}/${city.slug}`,
+            push({
+                url: toAbsoluteUrl(`/servicios/${service.slug}/${city.slug}`),
                 lastModified: now,
-            changeFrequency: 'monthly',
+                changeFrequency: 'monthly',
                 priority: 0.7,
             });
         });
     });
 
-    // 5) SOLUCIONES VERTICALES (hub)
+    // ——— 5) Soluciones verticales ———
     VERTICALS.forEach((vertical) => {
-        pushUrl({
-        url: `${baseUrl}/soluciones/${vertical.slug}`,
+        push({
+            url: toAbsoluteUrl(`/soluciones/${vertical.slug}`),
             lastModified: now,
-        changeFrequency: 'weekly',
-        priority: 0.9,
+            changeFrequency: 'weekly',
+            priority: 0.9,
         });
     });
 
-    // 6) SOLUCIONES VERTICALES x CIUDAD
+    // ——— 6) Soluciones × ciudad ———
     VERTICALS.forEach((vertical) => {
         CITIES.forEach((city) => {
-            pushUrl({
-            url: `${baseUrl}/soluciones/${vertical.slug}/${city.slug}`,
+            push({
+                url: toAbsoluteUrl(`/soluciones/${vertical.slug}/${city.slug}`),
                 lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
+                changeFrequency: 'monthly',
+                priority: 0.8,
             });
         });
     });
 
-    return Array.from(entries.values());
+    const list = Array.from(entries.values()).sort((a, b) => a.url.localeCompare(b.url));
+    return list;
 }

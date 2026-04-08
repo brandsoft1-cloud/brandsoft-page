@@ -29,6 +29,25 @@ export default async function BlogIndex() {
                     <p className="text-xl text-gray-400 max-w-2xl font-light mb-6">
                         Artículos y estrategias para dominar Google, automatizar procesos y escalar tu software.
                     </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                        {[
+                            { href: '/servicios/automatizacion-ia', label: 'Automatización IA' },
+                            { href: '/servicios/chatbots', label: 'Chatbots empresas' },
+                            { href: '/servicios/marketing-digital', label: 'Marketing digital' },
+                            { href: '/servicios/desarrollo-web', label: 'Desarrollo web' },
+                            { href: '/bogota', label: 'Bogotá' },
+                            { href: '/medellin', label: 'Medellín' },
+                            { href: '/cali', label: 'Cali' },
+                        ].map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-violet-400/60 transition-colors"
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                    </div>
                     <Link
                         href="/mentorias"
                         className="inline-flex items-center gap-2 text-violet-400 font-bold text-sm uppercase tracking-widest hover:text-white transition-colors"
