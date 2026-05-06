@@ -160,6 +160,12 @@ export default function Navbar() {
                         >
                             Mentorías
                         </Link>
+                        <Link
+                            href="/como-posicionar-google-gratis"
+                            className={`transition-colors ${pathname === '/como-posicionar-google-gratis' ? 'text-violet-300 font-semibold' : 'text-gray-300 hover:text-white'}`}
+                        >
+                            Landing SEO
+                        </Link>
                         <Link href="/blog" className={`transition-colors ${pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
                         <Link href="/casos-de-exito" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
                         <Link href="/#founder" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link>
@@ -236,6 +242,13 @@ export default function Navbar() {
                         <Link href="/soluciones" className="block pl-6 pr-3 py-2 text-violet-400 font-bold tracking-widest text-[10px] uppercase italic" onClick={() => setIsOpen(false)}>🔍 VER TODOS LOS SECTORES</Link>
                         <div className="border-t border-white/10 my-2"></div>
                         <Link href="/mentorias" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Mentorías</Link>
+                        <Link
+                            href="/como-posicionar-google-gratis"
+                            className="block px-3 py-2 text-violet-300 hover:text-violet-200 font-semibold"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Landing SEO
+                        </Link>
                         <Link href="/blog" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Blog</Link>
                         <Link href="/casos-de-exito" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
                         <Link href="/#founder" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Nosotros</Link>
