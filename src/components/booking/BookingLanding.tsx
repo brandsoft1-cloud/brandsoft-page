@@ -415,6 +415,7 @@ export default function BookingLanding() {
             <section id="agenda" className="border-b border-white/10">
                 <div className="mx-auto max-w-6xl px-4 py-16">
                     <h2 className="font-heading text-3xl font-bold">Agenda tu llamada</h2>
+                    {/* Flujo simple: formulario corto y respuesta por WhatsApp. */}
                     <p className="mt-3 max-w-3xl text-slate-400">Completa el formulario para entender tu objetivo y abrir conversación directa conmigo.</p>
 
                     <div className="mt-8 grid gap-6 lg:grid-cols-5">
