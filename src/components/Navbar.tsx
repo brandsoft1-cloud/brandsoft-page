@@ -163,6 +163,15 @@ export default function Navbar() {
                         <Link href="/blog" className={`transition-colors ${pathname === '/blog' || pathname?.startsWith('/blog/') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
                         <Link href="/casos-de-exito" className="text-gray-300 hover:text-white transition-colors">Casos de Éxito</Link>
                         <Link href="/#founder" className="text-gray-300 hover:text-white transition-colors">Nosotros</Link>
+                        <Link
+                            href="/sube-de-nivel"
+                            className={`px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors whitespace-nowrap border ${pathname?.startsWith('/sube-de-nivel')
+                                ? 'bg-violet-600 text-white border-violet-500'
+                                : 'bg-violet-600/20 text-violet-300 border-violet-500/40 hover:bg-violet-600/35 hover:text-white'
+                                }`}
+                        >
+                            Sube de Nivel
+                        </Link>
                         <a
                             href={whatsAppHref('Hola BrandSoft, escribo desde el menú web y quiero cotizar un servicio: software IA, SEO/GEO o leads B2B.')}
                             target="_blank"
@@ -193,6 +202,13 @@ export default function Navbar() {
                     className="md:hidden bg-black/95 backdrop-blur-lg border-b border-white/10 max-h-[80vh] overflow-y-auto"
                 >
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <Link
+                            href="/sube-de-nivel"
+                            className="block px-3 py-2 text-violet-300 bg-violet-500/10 border border-violet-500/40 rounded-xl font-black uppercase tracking-wide text-xs"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            🚀 Sube de Nivel (Landing)
+                        </Link>
                         <div className="px-3 py-2 text-sm text-gray-500 font-bold uppercase tracking-wider">B2B — demanda</div>
                         <Link href="/desarrollo-software-ia" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• Software + IA</Link>
                         <Link href="/posicionamiento-seo-geo" className="block pl-6 pr-3 py-2 text-emerald-400 font-bold" onClick={() => setIsOpen(false)}>• SEO + GEO</Link>
