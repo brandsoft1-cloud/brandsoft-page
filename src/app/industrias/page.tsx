@@ -35,7 +35,7 @@ export default function IndustriasHubPage() {
                                         <span className="text-xs font-black uppercase text-violet-400">{slug}</span>
                                         <p className="text-lg font-bold text-white mt-1">{d.h1}</p>
                                     </div>
-                                    <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-violet-400" />
+                                    <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
                                 </Link>
                             </li>
                         );

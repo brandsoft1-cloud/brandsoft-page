@@ -120,7 +120,7 @@ export default function BookingLanding() {
     const genericBookingHref = useMemo(
         () =>
             personalWhatsAppHref(
-                'Hola Mauricio, quiero agendar una llamada. Estoy interesado en: Webinar Corporativo / Mentoria 1:1 / Proyecto Software. Te comparto mas contexto al responder este mensaje.'
+                'Hola Mauricio, quiero agendar una llamada de 15 min para conseguir trabajo en tech. Quiero mentoría para mi nivel y trabajar nervios/emociones para rendir mejor en entrevistas.'
             ),
         []
     );
@@ -147,7 +147,7 @@ export default function BookingLanding() {
                         onClick={() => trackEvent('click_agendar_header')}
                         className="inline-flex items-center gap-2 rounded-full border border-indigo-400/60 px-4 py-2 text-xs font-black uppercase tracking-wide text-indigo-300 transition hover:bg-indigo-500/15"
                     >
-                        Agendar llamada
+                        Agendar llamada (15 min)
                         <ArrowRight className="h-4 w-4" />
                     </a>
                 </div>
@@ -156,14 +156,17 @@ export default function BookingLanding() {
             <section className="border-b border-white/10">
                 <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center">
                     <div>
-                        <p className="mb-4 inline-flex items-center rounded-full border border-indigo-400/40 bg-indigo-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-indigo-200">
-                            Agendamiento directo
+                        <p className="mb-4 inline-flex items-center rounded-full border border-rose-400/40 bg-rose-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-rose-200">
+                            Si hoy te bloquean las entrevistas, esta mentoría es para ti
                         </p>
                         <h1 className="font-heading text-4xl font-black leading-tight md:text-5xl">
-                            Escala tu equipo, tu carrera o tu software con estrategia tecnica y liderazgo humano.
+                            Te dan miedo las entrevistas?
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-amber-300 to-emerald-300">
+                                No consigues trabajo aun?
+                            </span>
                         </h1>
                         <p className="mt-6 max-w-xl text-base text-slate-300 md:text-lg">
-                            Te ayudo a resolver bloqueos reales en tecnologia, ejecucion y comunicacion. Agenda una llamada y definimos tu ruta.
+                            Te acompaño paso a paso para cambiar eso: mentorias para todos los niveles (principiante, junior, mid y senior), con CV + LinkedIn + simulacion real de entrevistas y trabajo de nerviosismo e inteligencia emocional para que rindas con seguridad y cierres ofertas.
                         </p>
                         <div className="mt-8 flex flex-wrap items-center gap-3">
                             <a
@@ -173,10 +176,10 @@ export default function BookingLanding() {
                                 onClick={() => trackEvent('click_agendar_hero')}
                                 className="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:bg-indigo-400"
                             >
-                                Agendar llamada
+                                Agendar llamada (15 min)
                                 <ArrowRight className="h-4 w-4" />
                             </a>
-                            <span className="text-xs text-slate-400">Duracion: 30 min | Respuesta rapida | Cupos limitados</span>
+                            <span className="text-xs text-slate-400">Llamada de 15 min | Todos los niveles | Trabajo emocional + estrategia</span>
                         </div>
                     </div>
                     <div className="relative">
@@ -333,11 +336,11 @@ export default function BookingLanding() {
                                 ),
                             },
                             {
-                                title: 'Developers Senior',
-                                description: 'Mentoria 1:1 para pasar a Senior+, Tech Lead o Arquitecto con vision de negocio.',
+                                title: 'Talento tech (junior, mid y senior)',
+                                description: 'Mentoria 1:1 para conseguir trabajo, mejorar entrevistas y crecer con una ruta segun tu nivel.',
                                 icon: <UserRound className="h-5 w-5" />,
                                 href: personalWhatsAppHref(
-                                    'Hola Mauricio, quiero agendar una llamada para Mentoria 1:1 y escalar a Senior/Tech Lead.'
+                                    'Hola Mauricio, quiero agendar una llamada para mentoria 1:1. Busco conseguir trabajo y avanzar segun mi nivel actual.'
                                 ),
                             },
                             {
@@ -362,7 +365,7 @@ export default function BookingLanding() {
                                     onClick={() => trackEvent('click_agendar_mid', { segment_index: index })}
                                     className="mt-5 inline-flex items-center gap-2 text-xs font-black uppercase tracking-wide text-indigo-300 hover:text-indigo-200"
                                 >
-                                    Agendar llamada
+                                    Agendar llamada (15 min)
                                     <ArrowRight className="h-4 w-4" />
                                 </a>
                             </article>
@@ -373,7 +376,7 @@ export default function BookingLanding() {
 
             <section className="border-b border-white/10">
                 <div className="mx-auto max-w-5xl px-4 py-14">
-                    <h2 className="font-heading text-3xl font-bold">Que pasa en la llamada</h2>
+                    <h2 className="font-heading text-3xl font-bold">Que pasa en la llamada de 15 minutos</h2>
                     <div className="mt-8 grid gap-4 md:grid-cols-3">
                         {[
                             {
@@ -414,9 +417,11 @@ export default function BookingLanding() {
 
             <section id="agenda" className="border-b border-white/10">
                 <div className="mx-auto max-w-6xl px-4 py-16">
-                    <h2 className="font-heading text-3xl font-bold">Agenda tu llamada</h2>
+                    <h2 className="font-heading text-3xl font-bold">Agenda tu llamada de 15 minutos</h2>
                     {/* Flujo simple: formulario corto y respuesta por WhatsApp. */}
-                    <p className="mt-3 max-w-3xl text-slate-400">Completa el formulario para entender tu objetivo y abrir conversación directa conmigo.</p>
+                    <p className="mt-3 max-w-3xl text-slate-400">
+                        Completa el formulario para entender tu objetivo y abrir conversacion directa conmigo. Aplica para todos los perfiles: principiante, junior, mid y senior.
+                    </p>
 
                     <div className="mt-8 grid gap-6 lg:grid-cols-5">
                         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
@@ -506,7 +511,7 @@ export default function BookingLanding() {
                         {[
                             {
                                 q: 'La llamada tiene costo?',
-                                a: 'No. Es una llamada diagnostico de 30 minutos para alinear objetivos y definir si podemos trabajar juntos.',
+                                a: 'No. Es una llamada diagnostico de 15 minutos para alinear objetivos y definir si podemos trabajar juntos.',
                             },
                             {
                                 q: 'Que pasa despues de la llamada?',
@@ -514,7 +519,7 @@ export default function BookingLanding() {
                             },
                             {
                                 q: 'Si soy principiante puedo aplicar?',
-                                a: 'Esta pagina esta orientada a perfiles senior y equipos. Si estas empezando, podemos validar ajuste en la llamada.',
+                                a: 'Si. Esta mentoría es para todos los perfiles (principiante, junior, mid y senior). Adaptamos la ruta a tu nivel, tus bloqueos y tu objetivo laboral.',
                             },
                             {
                                 q: 'Trabajas con empresas fuera de Colombia?',
@@ -536,7 +541,7 @@ export default function BookingLanding() {
                         Si llegaste hasta aqui, ya sabes que necesitas estructura, claridad y ejecucion.
                     </h2>
                     <p className="mt-4 text-slate-400">
-                        Agenda tu llamada y construyamos el siguiente nivel para tu equipo, tu carrera o tu empresa.
+                        Agenda tu llamada de 15 minutos y construyamos el siguiente nivel para tu equipo, tu carrera o tu empresa.
                     </p>
                     <a
                         href={genericBookingHref}
@@ -545,7 +550,7 @@ export default function BookingLanding() {
                         onClick={() => trackEvent('click_agendar_final')}
                         className="mt-8 inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-indigo-400"
                     >
-                        Agendar llamada ahora
+                        Agendar llamada (15 min)
                         <ArrowRight className="h-5 w-5" />
                     </a>
                 </div>

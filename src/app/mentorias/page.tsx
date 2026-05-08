@@ -18,9 +18,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Mentorías para conseguir trabajo: software, IA, finanzas y emociones | BrandSoft',
+    title: 'Mentorías para conseguir trabajo en industria tech | CV, LinkedIn y entrevistas',
     description:
-        'Hub de mentorías con un objetivo claro: que consigas empleo u ofertas mejores. Entrevistas tech, marketing, finanzas del candidato, IA para prepararte e inteligencia emocional laboral. Guías y pilares enlazados.',
+        'Mentorías 1:1 para conseguir trabajo en la industria tech: rediseño de CV, optimización de LinkedIn, simulación de entrevistas y estrategia para cerrar ofertas.',
     keywords: [
         'mentoría conseguir trabajo Colombia',
         'preparación entrevistas software',
@@ -70,18 +70,40 @@ export default async function MentoriasHubPage() {
                     </div>
                     <h1 className="font-heading text-4xl md:text-6xl font-black tracking-tight mb-6 leading-[1.05]">
                         Mentorías para que{' '}
-                        <span className="text-violet-400 italic">encuentres empleo</span> y domines el proceso
+                        <span className="text-violet-400 italic">consigas trabajo en la industria tech</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl leading-relaxed mb-4">
                         {MENTORIA_JOB_PROMISE}
                     </p>
                     <p className="text-lg text-gray-500 max-w-3xl leading-relaxed mb-8">
-                        Eres experto en software, marketing o finanzas; nosotros en el camino completo: entrevistas
-                        técnicas y comportamentales, uso inteligente de IA, claridad financiera y regulación emocional cuando
-                        la presión aprieta. Todo articulado en{' '}
+                        Eres experto en software, marketing o finanzas; nosotros en el camino completo para lograr el
+                        objetivo: conseguir un nuevo trabajo. Trabajamos entrevistas técnicas y comportamentales,
+                        estrategia profesional y, de forma prioritaria, nerviosismo, control de emociones y regulación
+                        bajo presión para que puedas rendir como realmente sabes.
+                        Todo articulado en{' '}
                         <strong className="text-gray-300">{pillarCount} pilares</strong> y{' '}
                         <strong className="text-gray-300">{articleCount} artículos</strong> que se enlazan entre sí.
                     </p>
+                    <div className="max-w-3xl rounded-3xl border border-violet-500/30 bg-violet-500/10 p-6 mb-8">
+                        <p className="text-[11px] font-black uppercase tracking-widest text-violet-300 mb-4">
+                            Enfoque fuerte de empleabilidad tech
+                        </p>
+                        <ul className="space-y-3">
+                            {[
+                                'Como conseguir trabajo en la industria tech con estrategia semanal clara.',
+                                'Rediseno de CV orientado a ATS y a reclutador tecnico.',
+                                'Preparacion de LinkedIn para atraer entrevistas y mensajes de hiring managers.',
+                                'Simulacion de entrevistas tecnicas y comportamentales con feedback directo.',
+                                'Trabajo profundo de nerviosismo y control de emociones antes, durante y despues de cada proceso.',
+                                'Acompanamiento integral con todo lo necesario hasta cerrar el objetivo: un nuevo trabajo.',
+                            ].map((item) => (
+                                <li key={item} className="flex gap-3 text-gray-200">
+                                    <CheckCircle2 className="w-5 h-5 text-violet-300 shrink-0 mt-0.5" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                     <Link
                         href="#pilares"
                         className="inline-flex items-center gap-2 text-violet-400 font-bold hover:text-white transition-colors"
