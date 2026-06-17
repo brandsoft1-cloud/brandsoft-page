@@ -1,23 +1,29 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Founder from "@/components/Founder";
-import SuccessStories from "@/components/SuccessStories";
-import Contact from "@/components/Contact";
-import SolutionsGrid from "@/components/SolutionsGrid";
-import TrustAuthorityStrip from "@/components/b2b/TrustAuthorityStrip";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import StatsStrip from '@/components/StatsStrip';
+import ClientLogos from '@/components/ClientLogos';
+import Services from '@/components/Services';
+import Pricing from '@/components/Pricing';
+import Founder from '@/components/Founder';
+import SuccessStories from '@/components/SuccessStories';
+import Contact from '@/components/Contact';
+import SolutionsGrid from '@/components/SolutionsGrid';
+import MentorshipSection from '@/components/MentorshipSection';
 
 export default function Home() {
-  return (
-    <main className="min-h-screen relative selection:bg-violet-500/30">
-      <Navbar />
-      <Hero />
-      <TrustAuthorityStrip />
-      <Services />
-      <SolutionsGrid />
-      <Founder />
-      <SuccessStories />
-      <Contact />
-    </main>
-  );
+    return (
+        <main className="min-h-screen relative selection:bg-violet-500/30">
+            <Navbar />
+            <Hero />
+            <StatsStrip />
+            <ClientLogos />
+            <Services />
+            <Pricing />
+            <SolutionsGrid />
+            <MentorshipSection />
+            <Founder />
+            <SuccessStories />
+            <Contact />
+        </main>
+    );
 }

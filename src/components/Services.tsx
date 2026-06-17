@@ -6,34 +6,43 @@ import { whatsAppHref } from '@/lib/contact';
 
 const services = [
     {
+        title: 'Desarrollo a la Medida',
+        description: 'Tu proceso más lento convertido en software que trabaja mientras duermes.',
+        icon: Code,
+        color: 'violet',
+    },
+    {
+        title: 'Posicionamiento SEO',
+        description: 'Primera página de Google. Posicionamos +47 sitios en Colombia y Latam.',
+        icon: Megaphone,
+        color: 'cyan',
+    },
+    {
         title: 'Inteligencia Artificial',
-        description: 'Automatización inteligente de procesos y análisis predictivo para escalar tu negocio.',
+        description:
+            'Agentes de IA que atienden clientes, califican leads y generan reportes sin que muevas un dedo.',
         icon: BrainCircuit,
-        color: 'emerald'
+        color: 'emerald',
     },
     {
         title: 'Branding Estratégico',
-        description: 'Construimos identidades de marca memorables que conectan con tu audiencia ideal.',
+        description:
+            'Una marca que tu cliente recuerda y tu competencia envidia. Identidad visual + estrategia.',
         icon: Sparkles,
-        color: 'violet'
+        color: 'violet',
     },
     {
         title: 'Marketing Digital',
-        description: 'Estrategias de posicionamiento SEO y campañas digitales orientadas a resultados.',
+        description: 'Campañas que no queman presupuesto. Meta Ads, Google Ads y contenido que cierra ventas.',
         icon: Megaphone,
-        color: 'cyan'
-    },
-    {
-        title: 'Desarrollo a la Medida',
-        description: 'Aplicaciones web y móviles escalables, rápidas y diseñadas con la última tecnología.',
-        icon: Code,
-        color: 'violet'
+        color: 'cyan',
     },
     {
         title: 'Agente de Marketing IA',
-        description: 'Super agente que diseña guiones para Reels, Copy creativo y estrategias de contenido con un solo clic.',
+        description:
+            'Super agente que diseña guiones para Reels, copy creativo y estrategias de contenido con un solo clic.',
         icon: Sparkles,
-        color: 'violet'
+        color: 'violet',
     },
 ];
 
@@ -57,26 +66,28 @@ export default function Services() {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg"
                     >
-                        Combinamos creatividad, tecnología e inteligencia artificial para crear soluciones que transforman negocios.
+                        Combinamos creatividad, tecnología e inteligencia artificial para crear soluciones que
+                        transforman negocios.
                     </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
-                            key={index}
+                            key={service.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.08 }}
                             className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group"
                         >
-                            <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 
+                            <div
+                                className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 
                 ${service.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-400' : ''}
                 ${service.color === 'violet' ? 'bg-violet-500/20 text-violet-400' : ''}
                 ${service.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' : ''}
-                ${service.color === 'pink' ? 'bg-pink-500/20 text-pink-400' : ''}
-              `}>
+              `}
+                            >
                                 <service.icon className="w-7 h-7" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
@@ -87,7 +98,7 @@ export default function Services() {
                                 )}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors group/cta"
+                                className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 WhatsApp — asesoría gratis

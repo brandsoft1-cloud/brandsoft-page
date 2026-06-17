@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-import SuccessStories from '@/components/SuccessStories';
+import CaseStudiesGrid from '@/components/CaseStudiesGrid';
 import Contact from '@/components/Contact';
-import TrustAuthorityStrip from '@/components/b2b/TrustAuthorityStrip';
 import { whatsAppHref } from '@/lib/contact';
 import { Calendar, ClipboardCheck } from 'lucide-react';
 
@@ -21,7 +20,8 @@ export default function CasosDeExitoPage() {
             <section className="py-16 px-4 max-w-5xl mx-auto text-center border-b border-white/10">
                 <h1 className="font-heading text-4xl md:text-6xl font-black mb-6">Casos de éxito</h1>
                 <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-                    Prueba social y resultados medibles. ¿Quiere algo equivalente en su vertical?{' '}
+                    Cada proyecto tiene una historia: el momento en que el cliente entendió que perdía plata por no
+                    actuar, y cómo lo cambiamos.{' '}
                     <Link href="/industrias" className="text-violet-400 font-bold hover:underline">
                         Ver industrias
                     </Link>
@@ -48,8 +48,7 @@ export default function CasosDeExitoPage() {
                     </a>
                 </div>
             </section>
-            <TrustAuthorityStrip />
-            <SuccessStories />
+            <CaseStudiesGrid />
             <Contact />
         </main>
     );

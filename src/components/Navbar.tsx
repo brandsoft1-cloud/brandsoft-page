@@ -141,7 +141,7 @@ export default function Navbar() {
                                         <Link href="/soluciones/limpieza" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
                                             🧹 Limpieza Profesional
                                         </Link>
-                                        <Link href="/soluciones/inmobiliaria" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
+                                        <Link href="/soluciones/inmobiliarias" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
                                             🏠 Inmobiliarias
                                         </Link>
                                         <Link href="/soluciones/educacion" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
@@ -237,7 +237,7 @@ export default function Navbar() {
                         <Link href="/soluciones/estetica" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Clínicas Estéticas</Link>
                         <Link href="/soluciones/odontologia" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Odontología</Link>
                         <Link href="/soluciones/limpieza" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Servicios de Limpieza</Link>
-                        <Link href="/soluciones/inmobiliaria" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Inmobiliarias</Link>
+                        <Link href="/soluciones/inmobiliarias" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Inmobiliarias</Link>
                         <Link href="/soluciones/educacion" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Educación</Link>
                         <Link href="/soluciones" className="block pl-6 pr-3 py-2 text-violet-400 font-bold tracking-widest text-[10px] uppercase italic" onClick={() => setIsOpen(false)}>🔍 VER TODOS LOS SECTORES</Link>
                         <div className="border-t border-white/10 my-2"></div>

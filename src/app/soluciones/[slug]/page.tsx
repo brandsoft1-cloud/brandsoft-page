@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+import AgenteIaPromoStrip from "@/components/agente-ia/AgenteIaPromoStrip";
+import { AGENTE_CONVERSACIONAL_SLUGS } from "@/data/agente-conversacional-sectors";
 import { VERTICALS, CITIES } from "@/data/seo-config";
 import { notFound } from 'next/navigation';
 import {
@@ -105,6 +107,10 @@ export default async function VerticalPage({ params }: PageProps) {
                     </div>
                 </div>
             </section>
+
+            {AGENTE_CONVERSACIONAL_SLUGS.includes(slug) && (
+                <AgenteIaPromoStrip slug={slug} sectorLabel={vertical.name.toLowerCase()} />
+            )}
 
             {/* Product Display */}
             <section className="py-24 relative bg-zinc-950/20">

@@ -3,6 +3,22 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Dominio legacy → canónico .com.co
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "brandsoft.com" }],
+        destination: "https://www.brandsoft.com.co/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.brandsoft.com" }],
+        destination: "https://www.brandsoft.com.co/:path*",
+        permanent: true,
+      },
+      // Alias sector inmobiliaria → slug canónico
+      { source: "/soluciones/inmobiliaria", destination: "/soluciones/inmobiliarias", permanent: true },
+      { source: "/soluciones/inmobiliaria/:path*", destination: "/soluciones/inmobiliarias/:path*", permanent: true },
       // Herramientas / migraciones WordPress suelen pedir estas rutas; unificamos al sitemap de Next.js
       { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
