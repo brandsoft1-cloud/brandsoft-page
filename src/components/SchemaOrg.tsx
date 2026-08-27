@@ -19,7 +19,7 @@ export default function SchemaOrg() {
                 logo: `${BASE}/logo.png`,
                 image: `${BASE}/og-image.jpg`,
                 description:
-                    'Software con inteligencia artificial, SEO técnico, GEO/LLMO y generación de leads B2B para empresas en Colombia y Latinoamérica.',
+                    'Automatización de procesos con inteligencia artificial, agentes de IA y flujos de trabajo con n8n para empresas y consultoras en Colombia y Latinoamérica. También SEO técnico, GEO/LLMO y generación de leads B2B.',
                 telephone: '+573213296957',
                 email: 'contacto@brandsoft.com.co',
                 priceRange: '$$$',
@@ -41,17 +41,32 @@ export default function SchemaOrg() {
                     /* 'https://www.g2.com/products/...', */
                 ],
                 knowsAbout: [
+                    'Automatización de procesos con inteligencia artificial',
+                    'Automatización de flujos de trabajo con n8n',
+                    'Agentes de IA conversacionales',
+                    'RPA (Robotic Process Automation)',
+                    'Consultoría de automatización para empresas',
+                    'Integración de APIs, CRM y ERP',
                     'Inteligencia artificial aplicada',
                     'Desarrollo de software a la medida',
                     'SEO técnico',
                     'Generative Engine Optimization',
-                    'Account-based marketing',
                     'Generación de leads B2B',
                 ],
                 hasOfferCatalog: {
                     '@type': 'OfferCatalog',
                     name: 'Servicios BrandSoft',
                     itemListElement: [
+                        {
+                            '@type': 'Offer',
+                            itemOffered: {
+                                '@type': 'Service',
+                                name: 'Automatización de procesos con IA y n8n',
+                                url: `${BASE}/ia-automatizaciones`,
+                                description:
+                                    'Automatización de procesos manuales con agentes de IA y flujos de trabajo en n8n para empresas y consultoras: ventas, soporte, reportería y facturación 24/7.',
+                            },
+                        },
                         {
                             '@type': 'Offer',
                             itemOffered: {

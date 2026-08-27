@@ -1,39 +1,40 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, Megaphone, Code, BrainCircuit, MessageCircle } from 'lucide-react';
+import { Sparkles, Megaphone, Code, BrainCircuit, MessageCircle, Workflow, Cpu } from 'lucide-react';
 import { whatsAppHref } from '@/lib/contact';
 
 const services = [
     {
-        title: 'Desarrollo a la Medida',
+        title: 'Automatización de Procesos con IA',
+        description:
+            'Eliminamos tareas manuales conectando tus apps con flujos de trabajo en n8n: datos, correos, CRM y reportes que se ejecutan solos.',
+        icon: Workflow,
+        color: 'emerald',
+    },
+    {
+        title: 'Agentes de IA 24/7',
+        description:
+            'Agentes de IA que atienden clientes, califican leads y responden por WhatsApp sin que muevas un dedo.',
+        icon: BrainCircuit,
+        color: 'emerald',
+    },
+    {
+        title: 'Integraciones y Flujos n8n',
+        description:
+            'Conectamos WhatsApp, CRM, ERP, correo y bases de datos en flujos de trabajo automatizados y a la medida de tu operación.',
+        icon: Cpu,
+        color: 'cyan',
+    },
+    {
+        title: 'Software a la Medida',
         description: 'Tu proceso más lento convertido en software que trabaja mientras duermes.',
         icon: Code,
         color: 'violet',
     },
     {
-        title: 'Posicionamiento SEO',
-        description: 'Primera página de Google. Posicionamos +47 sitios en Colombia y Latam.',
-        icon: Megaphone,
-        color: 'cyan',
-    },
-    {
-        title: 'Inteligencia Artificial',
-        description:
-            'Agentes de IA que atienden clientes, califican leads y generan reportes sin que muevas un dedo.',
-        icon: BrainCircuit,
-        color: 'emerald',
-    },
-    {
-        title: 'Branding Estratégico',
-        description:
-            'Una marca que tu cliente recuerda y tu competencia envidia. Identidad visual + estrategia.',
-        icon: Sparkles,
-        color: 'violet',
-    },
-    {
-        title: 'Marketing Digital',
-        description: 'Campañas que no queman presupuesto. Meta Ads, Google Ads y contenido que cierra ventas.',
+        title: 'Posicionamiento SEO y GEO',
+        description: 'Primera página de Google y visibilidad en IA. Posicionamos +47 sitios en Colombia y Latam.',
         icon: Megaphone,
         color: 'cyan',
     },
@@ -57,7 +58,7 @@ export default function Services() {
                         viewport={{ once: true }}
                         className="font-heading text-4xl md:text-5xl font-bold mb-4"
                     >
-                        Nuestros <span className="text-violet-400">Servicios</span>
+                        Automatización con <span className="text-violet-400">IA</span> y más
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -66,8 +67,8 @@ export default function Services() {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg"
                     >
-                        Combinamos creatividad, tecnología e inteligencia artificial para crear soluciones que
-                        transforman negocios.
+                        Automatizamos los procesos de tu empresa con inteligencia artificial y flujos de trabajo en n8n.
+                        Menos tareas manuales, más resultados.
                     </motion.p>
                 </div>
 

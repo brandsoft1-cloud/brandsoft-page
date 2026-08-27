@@ -19,17 +19,27 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BrandSoft | Software a la Medida, SEO e IA",
+    default: "BrandSoft | Automatización de Procesos con IA y n8n para Empresas",
     template: "%s | BrandSoft"
   },
-  description: "Especialistas en Desarrollo con Next.js, SEO Técnico Avanzado y Agentes de IA impulsados por Sendell. Potenciamos marcas de alto nivel con tecnología de vanguardia.",
-  keywords: ["Desarrollo Software Bogotá", "SEO Técnico Colombia", "Agentes IA Sendell", "Next.js Developer", "Consultoría Software"],
+  description: "Automatizamos los procesos manuales de tu empresa con IA, agentes conversacionales y flujos en n8n. Consultoría de automatización para empresas y consultoras en Colombia y Latam. Recupera horas y reduce costos.",
+  keywords: [
+    "automatización de procesos con IA",
+    "automatización con n8n Colombia",
+    "agentes de IA para empresas",
+    "consultoría de automatización",
+    "automatizar procesos empresariales",
+    "flujos de trabajo con n8n",
+    "RPA e inteligencia artificial",
+    "agentes de IA por WhatsApp",
+    "automatización para consultoras",
+  ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'BrandSoft | IA y Transformación Digital',
-    description: 'Revoluciona tu estrategia de branding y marketing con software de alto rendimiento.',
+    title: 'BrandSoft | Automatización de Procesos con IA y n8n',
+    description: 'Agentes de IA y flujos automatizados con n8n que trabajan por tu empresa 24/7. Menos tareas manuales, más resultados.',
     url: SITE_URL,
     siteName: 'BrandSoft',
     locale: 'es_CO',
@@ -37,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BrandSoft | IA y Transformación Digital',
-    description: 'Revoluciona tu estrategia de branding y marketing con software de alto nivel.',
+    title: 'BrandSoft | Automatización de Procesos con IA y n8n',
+    description: 'Agentes de IA y flujos automatizados con n8n que trabajan por tu empresa 24/7. Menos tareas manuales, más resultados.',
   },
   robots: defaultRobotsMetadata,
   verification: {
