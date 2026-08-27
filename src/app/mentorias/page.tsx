@@ -5,6 +5,7 @@ import Contact from '@/components/Contact';
 import CtaConversionBand from '@/components/CtaConversionBand';
 import { getAllPosts } from '@/lib/mdx';
 import { MENTORIA_BLOG_SLUGS, MENTORIA_JOB_PROMISE, MENTORIA_PILLARS } from '@/data/mentoria-seo';
+import { MENTORIA_PERFILES } from '@/data/mentoria-perfiles';
 import {
     BookOpen,
     ChevronRight,
@@ -110,6 +111,37 @@ export default async function MentoriasHubPage() {
                     >
                         Ver pilares y rutas <ChevronRight className="w-4 h-4" />
                     </Link>
+                </div>
+            </section>
+
+            <section id="perfiles" className="py-20 px-4 border-b border-white/10">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="font-heading text-3xl md:text-4xl font-black mb-4 text-center">
+                        ¿Con cuál te identificas?
+                    </h2>
+                    <p className="text-gray-400 mb-12 max-w-2xl mx-auto text-center">
+                        No importa en qué punto estés: cada situación tiene su propia ruta. Entra a la tuya y verás
+                        exactamente cómo te acompañamos.
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        {MENTORIA_PERFILES.map((perfil) => (
+                            <Link
+                                key={perfil.slug}
+                                href={perfil.path}
+                                className="group p-8 rounded-3xl border border-white/10 bg-zinc-950/60 hover:border-violet-500/40 hover:bg-violet-950/20 transition-all"
+                            >
+                                <span className="text-[10px] font-black uppercase tracking-widest text-violet-400 block mb-3">
+                                    {perfil.badge}
+                                </span>
+                                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">
+                                    {perfil.h1}
+                                </h3>
+                                <span className="text-xs font-black uppercase tracking-widest text-violet-400 flex items-center gap-1">
+                                    Ver mi ruta <ChevronRight className="w-3 h-3" />
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 

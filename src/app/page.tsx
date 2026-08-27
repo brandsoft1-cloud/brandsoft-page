@@ -8,6 +8,7 @@ import Founder from '@/components/Founder';
 import SuccessStories from '@/components/SuccessStories';
 import Contact from '@/components/Contact';
 import SolutionsGrid from '@/components/SolutionsGrid';
+import MentorshipSection from '@/components/MentorshipSection';
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             <Pricing />
             <Founder />
             <SuccessStories />
+            <MentorshipSection />
             <Contact />
         </main>
     );

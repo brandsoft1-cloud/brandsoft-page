@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { CITIES, SERVICES, VERTICALS } from '@/data/seo-config';
 import { INDUSTRIA_SLUGS } from '@/data/b2b-hub-structure';
 import { MENTORIA_PILLARS } from '@/data/mentoria-seo';
+import { MENTORIA_PERFILES } from '@/data/mentoria-perfiles';
 import { PAGINAS_WEB_CIUDAD_SLUGS } from '@/data/paginas-web-ciudad';
 import { getAllPosts } from '@/lib/mdx';
 import { getSitemapBaseUrl, safeLastModified, toAbsoluteUrl } from '@/lib/sitemap-utils';
@@ -49,6 +50,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             path: p.path,
             changeFrequency: 'weekly' as const,
             priority: 0.86,
+        })),
+        ...MENTORIA_PERFILES.map((p) => ({
+            path: p.path,
+            changeFrequency: 'weekly' as const,
+            priority: 0.88,
         })),
     ];
 
