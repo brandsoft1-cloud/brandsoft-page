@@ -178,7 +178,7 @@ export default async function MentoriaPerfilPage({ params }: Props) {
                         href="/mentorias"
                         className={`inline-flex items-center text-gray-500 ${a.hoverText} text-xs font-bold uppercase tracking-widest mb-8`}
                     >
-                        <ChevronLeft className="w-4 h-4 mr-1" /> Volver al hub de mentorías
+                        <ChevronLeft className="w-4 h-4 mr-1" /> Volver a BrandSoft Education
                     </Link>
 
                     <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${a.chipBg} border ${a.chipBorder} ${a.chipText} text-xs font-bold mb-6`}>

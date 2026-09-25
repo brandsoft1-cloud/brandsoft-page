@@ -6,6 +6,7 @@ import { Menu, X, Sparkles, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { whatsAppHref } from '@/lib/contact';
+import { isEducationLanding } from '@/lib/education-routes';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -13,6 +14,7 @@ export default function Navbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [solutionsOpen, setSolutionsOpen] = useState(false);
     const pathname = usePathname();
+    const solidNav = scrolled || isEducationLanding(pathname);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,8 +26,8 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? 'bg-black/80 backdrop-blur-md border-b border-white/10'
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${solidNav
+                ? 'bg-black/90 backdrop-blur-md border-b border-white/10'
                 : 'bg-transparent'
                 }`}
         >
@@ -98,8 +100,8 @@ export default function Navbar() {
                                         <Link href="/ia-automatizaciones" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
                                             IA y Automatizaciones
                                         </Link>
-                                        <Link href="/web-ia" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
-                                            Web con IA
+                                        <Link href="/crear-pagina-web-con-ia" className="block px-4 py-3 text-sm text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
+                                            Web con IA · Education
                                         </Link>
                                         <Link href="/agente-ai" className="block px-4 py-3 text-sm text-violet-400 bg-violet-500/5 hover:bg-violet-500/10 hover:text-white transition-colors border-t border-white/5 font-bold italic">
                                             ✨ Agente de Marketing IA
@@ -158,7 +160,7 @@ export default function Navbar() {
                             href="/mentorias"
                             className={`transition-colors ${pathname?.startsWith('/mentorias') ? 'text-white font-medium' : 'text-gray-300 hover:text-white'}`}
                         >
-                            Mentorías
+                            BrandSoft Education
                         </Link>
                         <Link
                             href="/como-posicionar-google-gratis"
@@ -229,7 +231,7 @@ export default function Navbar() {
                         <Link href="/marketing-digital" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Marketing Digital e SEO</Link>
                         <Link href="/marketing-digital/seo-tecnico" className="block pl-10 pr-3 py-1 text-xs text-gray-500 hover:text-white" onClick={() => setIsOpen(false)}>↳ SEO Técnico</Link>
                         <Link href="/ia-automatizaciones" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• IA y Automatizaciones</Link>
-                        <Link href="/web-ia" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Web con IA</Link>
+                        <Link href="/crear-pagina-web-con-ia" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Web con IA · Education</Link>
                         <Link href="/agente-ai" className="block pl-6 pr-3 py-2 text-violet-400 font-bold" onClick={() => setIsOpen(false)}>• ✨ AGENTE AI (REELS & COPY)</Link>
                         <div className="px-3 py-2 text-sm text-gray-500 font-bold uppercase tracking-wider">Soluciones</div>
                         <Link href="/soluciones/restaurantes" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Restaurantes</Link>
@@ -241,7 +243,7 @@ export default function Navbar() {
                         <Link href="/soluciones/educacion" className="block pl-6 pr-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>• Educación</Link>
                         <Link href="/soluciones" className="block pl-6 pr-3 py-2 text-violet-400 font-bold tracking-widest text-[10px] uppercase italic" onClick={() => setIsOpen(false)}>🔍 VER TODOS LOS SECTORES</Link>
                         <div className="border-t border-white/10 my-2"></div>
-                        <Link href="/mentorias" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Mentorías</Link>
+                        <Link href="/mentorias" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>BrandSoft Education</Link>
                         <Link
                             href="/como-posicionar-google-gratis"
                             className="block px-3 py-2 text-violet-300 hover:text-violet-200 font-semibold"

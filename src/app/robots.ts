@@ -11,7 +11,26 @@ export default function robots(): MetadataRoute.Robots {
         rules: [
             {
                 userAgent: '*',
-                allow: '/',
+                allow: [
+                    '/',
+                    '/mentorias',
+                    '/mentorias/career-pack',
+                    '/mentorias/career-pack/co',
+                    '/mentorias/career-pack/mx',
+                    '/mentorias/career-pack/pe',
+                    '/mentorias/career-pack/ar',
+                    '/mentorias/career-pack/cl',
+                    '/mentorias/career-pack/tx',
+                    '/mentorias/producto-real',
+                    '/mentorias/clientes-reales',
+                    '/crear-pagina-web-con-ia',
+                    '/crear-pagina-web-con-ia/co',
+                    '/crear-pagina-web-con-ia/mx',
+                    '/crear-pagina-web-con-ia/pe',
+                    '/crear-pagina-web-con-ia/ar',
+                    '/crear-pagina-web-con-ia/cl',
+                    '/crear-pagina-web-con-ia/tx',
+                ],
                 disallow: ['/api/'],
             },
             {

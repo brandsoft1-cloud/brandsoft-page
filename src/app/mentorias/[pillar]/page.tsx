@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!meta) return { title: 'No encontrado' };
 
     return {
-        title: `${meta.title} | BrandSoft`,
+        title: `${meta.title} | BrandSoft Education`,
         description: meta.description,
         keywords: [...meta.keywords],
         alternates: {
@@ -53,7 +53,7 @@ export default async function MentoriaPillarPage({ params }: Props) {
                     href="/mentorias"
                     className="inline-flex items-center text-gray-500 hover:text-violet-400 text-xs font-bold uppercase tracking-widest mb-10"
                 >
-                    <ChevronLeft className="w-4 h-4 mr-1" /> Volver al hub de mentorías
+                    <ChevronLeft className="w-4 h-4 mr-1" /> Volver a BrandSoft Education
                 </Link>
 
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-5">
@@ -137,7 +137,7 @@ export default async function MentoriaPillarPage({ params }: Props) {
                     <CtaConversionBand
                         title="¿Quieres acelerar tu búsqueda con mentoría 1:1?"
                         subtitle="Simulacros, revisión de materiales y plan claro hasta la oferta. Cuéntanos tu perfil y objetivo laboral."
-                        whatsappContext={`estoy en el pilar ${meta.shortTitle} del hub de mentorías y quiero conseguir trabajo / preparar entrevistas.`}
+                        whatsappContext={`estoy en el pilar ${meta.shortTitle} de BrandSoft Education y quiero conseguir trabajo / preparar entrevistas.`}
                     />
                 </div>
             </article>

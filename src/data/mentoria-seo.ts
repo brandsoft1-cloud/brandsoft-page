@@ -5,7 +5,7 @@ export const MENTORIA_JOB_PROMISE =
 
 export const MENTORIA_HUB = {
     path: '/mentorias',
-    title: 'Mentorías para conseguir trabajo y pasar entrevistas | BrandSoft',
+    title: 'Mentorías para conseguir trabajo y pasar entrevistas | BrandSoft Education',
 } as const;
 
 export type MentoriaPillarDef = {
@@ -134,7 +134,7 @@ export const MENTORIA_PILLARS = [
         bodyParagraphs: [
             'La IA cambió la velocidad de preparación, no las reglas del juego: quien contrata sigue buscando juicio, comunicación y consistencia. En este pilar enseñamos a usar modelos y herramientas como multiplicador, no como sustituto de pensar.',
             'Evitamos el error común: CV y respuestas que suenan a plantilla, o respuestas técnicas memorizadas que se caen con una sola pregunta de seguimiento. Combinamos automatización con práctica realista.',
-            'Si vienes de software o de marketing, el enfoque se adapta: en tech damos más peso a problemas y diseño; en perfiles comerciales, a narrativa y casos. Todo conecta con el hub de mentorías y con los artículos de abajo.',
+            'Si vienes de software o de marketing, el enfoque se adapta: en tech damos más peso a problemas y diseño; en perfiles comerciales, a narrativa y casos. Todo conecta con BrandSoft Education y con los artículos de abajo.',
         ],
     },
     {

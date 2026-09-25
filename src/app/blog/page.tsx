@@ -52,7 +52,7 @@ export default async function BlogIndex() {
                         href="/mentorias"
                         className="inline-flex items-center gap-2 text-violet-400 font-bold text-sm uppercase tracking-widest hover:text-white transition-colors"
                     >
-                        Hub de mentorías y consultoría de carrera →
+                        Mentoría técnica 1 a 1 →
                     </Link>
                 </div>
             </section>

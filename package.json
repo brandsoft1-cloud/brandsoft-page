@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack --disable-source-maps -H 127.0.0.1 -p 3000",
+    "dev:turbo": "next dev --turbopack -H 127.0.0.1 -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
+  },
+  "engines": {
+    "node": ">=20 <25"
   },
   "dependencies": {
     "clsx": "^2.1.1",

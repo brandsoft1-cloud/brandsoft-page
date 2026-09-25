@@ -3,8 +3,12 @@ import Contact from "@/components/Contact";
 import { Sparkles, Code2, BotMessageSquare, Zap } from "lucide-react";
 
 export const metadata = {
-    title: "Páginas Web con Inteligencia Artificial | BrandSoft",
-    description: "Revoluciona tu presencia online con sitios web impulsados por IA. Chatbots inteligentes, personalización dinámica y alta conversión.",
+    title: "Sitios web con agentes IA y chatbots | BrandSoft",
+    description:
+        "Servicio B2B: sitios con agentes conversacionales, personalización y alto rendimiento. Si buscas el webinar Education para crear tu landing con IA, ve a /crear-pagina-web-con-ia.",
+    alternates: {
+        canonical: "/web-ia",
+    },
 };
 
 const aiWebFeatures = [

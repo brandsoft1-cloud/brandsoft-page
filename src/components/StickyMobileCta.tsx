@@ -1,13 +1,18 @@
 'use client';
 
 import { MessageCircle } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { whatsAppHref } from '@/lib/contact';
+import { isEducationLanding } from '@/lib/education-routes';
 
 /**
  * Barra fija inferior en móvil: CTA principal a WhatsApp.
  * El widget flotante de WhatsApp se desplaza arriba de esta barra.
  */
 export default function StickyMobileCta() {
+    const pathname = usePathname();
+    if (isEducationLanding(pathname)) return null;
+
     return (
         <div
             className="fixed bottom-0 inset-x-0 z-[90] lg:hidden border-t border-emerald-500/40 bg-zinc-950/95 backdrop-blur-xl px-3 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-[0_-8px_32px_rgba(0,0,0,0.5)]"

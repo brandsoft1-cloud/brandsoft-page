@@ -4,9 +4,12 @@ import { useState, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { whatsAppHref } from '@/lib/contact';
+import { isEducationLanding } from '@/lib/education-routes';
 
 export default function WhatsAppWidget() {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [showBubble, setShowBubble] = useState(false);
 
@@ -31,6 +34,8 @@ export default function WhatsAppWidget() {
             '_blank'
         );
     };
+
+    if (isEducationLanding(pathname)) return null;
 
     return (
         <div className="fixed bottom-24 right-4 sm:right-8 z-[100] flex flex-col items-end gap-4 pointer-events-none lg:bottom-8">
