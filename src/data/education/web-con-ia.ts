@@ -38,7 +38,14 @@ export const WEB_CON_IA = {
     masterLine:
         'No aprendes a programar. Aprendes a producir y vender una web con IA — sin regalar tu tiempo.',
     priceAnchorUsd: 500,
-    priceSpecialUsd: 190,
+    /** Precio LatAm (hub + co/mx/pe/ar/cl). Cierre por Meet del socio. */
+    priceLatamUsd: 129,
+    /** Precio Texas / US. Checkout PayPal (botón hosted). */
+    priceTxUsd: 190,
+    /** @deprecated usar resolveWebConIaPricing — default LatAm */
+    priceSpecialUsd: 129,
+    roiLine:
+        'Con una sola landing cobrada a USD 200–400 en tu país, el webinar se paga solo.',
     replayMonths: 6,
     socioCierreMeetUrl:
         process.env.NEXT_PUBLIC_SOCIO_CIERRE_MEET_URL ?? 'https://meet.google.com/yco-bujk-njw',
@@ -48,9 +55,9 @@ export const WEB_CON_IA = {
         'BAAg3O0cCSD3XR_J-FzbwEs4cxLH848_cyS-Cn-OagcWFbwKP6LgB2UbO9IUDBoSidTr1DVxBsHvoO7kT4',
     metaTitle: 'Crear página web con IA (sin programar) | BrandSoft Education',
     metaDescription:
-        'Aprende a crear y vender una landing con IA + Next.js sin programar. 2 webinars de 90 min, deploy en Vercel, dominio, SEO básico y guion de venta. Precio especial USD 190. BrandSoft Education.',
+        'Aprende a crear y vender una landing con IA + Next.js sin programar. 2 webinars de 90 min, deploy en Vercel y guion de venta. Precio LatAm desde USD 129 · Texas USD 190. BrandSoft Education.',
     headline: 'Crear página web con IA — sin saber programar',
-    lede: 'Dos sesiones en vivo de 90 minutos. Sales con una landing en producción, SEO on-page básico, dominio en proceso y un guion para cobrarla en LatAm o Texas. BrandSoft Education.',
+    lede: 'Dos sesiones en vivo de 90 minutos. Sales con una landing en producción, SEO on-page básico, dominio en proceso y un guion para cobrarla. Precio LatAm desde USD 129; Texas USD 190.',
     symptoms: [
         'Quiero mi web ya, sin pagar una agencia cara.',
         'Sé usar ChatGPT pero no sé cómo dejar una página en internet.',
@@ -153,25 +160,69 @@ export const WEB_CON_IA = {
             a: 'No. Usas una plantilla BrandSoft y IA como copiloto. Si te trabas, hay “modo pasajero”: sigues la pantalla.',
         },
         {
-            q: '¿Qué incluye el precio de USD 190?',
-            a: 'Los dos lives, replay 6 meses, repo privado, prompt pack, brief, checklist deploy/DNS y guion de venta. El valor ancla del programa es USD 500.',
+            q: '¿Cuánto cuesta en LatAm y en Texas?',
+            a: 'Ancla USD 500. Lanzamiento LatAm USD 129 (cierras con el asesor por Meet). Texas / US: USD 190 con PayPal. Mismo webinar y mismos materiales.',
+        },
+        {
+            q: '¿El precio LatAm se paga en la página?',
+            a: 'En LatAm el cierre es con el asesor (Meet o WhatsApp): confirma el cupo a USD 129 y te indica cómo pagar. En Texas puedes pagar directo con PayPal.',
         },
         {
             q: '¿Cómo hablo con el asesor antes de pagar?',
-            a: 'Entra a la sección Asesoría: el socio te atiende por Google Meet (y hay WhatsApp de respaldo). Ahí resuelves dudas y cierras.',
+            a: 'Entra a la sección Asesoría: el socio te atiende por Google Meet (y hay WhatsApp de respaldo). Ahí resuelves dudas, precio y cierre.',
         },
         {
             q: '¿Cuándo recibo el link del live y el repo?',
             a: 'Después de pagar, escribes por WhatsApp con tu correo. El equipo confirma fecha/hora COT, invita al repo privado y te da el acceso al Meet del live.',
         },
         {
-            q: '¿Hay cupo limitado?',
-            a: 'No hay tope duro de asientos en el Meet. El precio especial USD 190 es de lanzamiento; el ancla sigue siendo USD 500.',
+            q: '¿Vale la pena si cobro landings en mi país?',
+            a: 'Sí: con una sola landing cobrada a USD 200–400 recuperas la inversión. El webinar te deja método + guion para no regalar revisiones.',
         },
     ] as const satisfies readonly WebConIaFaq[],
     marketNote:
-        'Un solo live para todos los países. Landings GEO en Colombia, México, Perú, Argentina, Chile y Texas. Precios en USD.',
+        'Un solo live para todos los países. Precio LatAm USD 129 · Texas USD 190. Ancla USD 500.',
 } as const;
+
+export type WebConIaCheckout = 'meet' | 'paypal';
+
+export type WebConIaPricing = {
+    region: 'latam' | 'tx';
+    anchorUsd: number;
+    specialUsd: number;
+    checkout: WebConIaCheckout;
+    badge: string;
+    ctaBuyLabel: string;
+    priceNote: string;
+};
+
+/** Precio y modo de cierre según mercado GEO (hub = LatAm). */
+export function resolveWebConIaPricing(
+    geo: 'co' | 'mx' | 'pe' | 'ar' | 'cl' | 'tx' | null | undefined,
+): WebConIaPricing {
+    if (geo === 'tx') {
+        return {
+            region: 'tx',
+            anchorUsd: WEB_CON_IA.priceAnchorUsd,
+            specialUsd: WEB_CON_IA.priceTxUsd,
+            checkout: 'paypal',
+            badge: 'Precio Texas / US',
+            ctaBuyLabel: `Comprar por USD ${WEB_CON_IA.priceTxUsd}`,
+            priceNote:
+                'Pago con PayPal. Mismo live y materiales que LatAm. Ancla USD 500.',
+        };
+    }
+    return {
+        region: 'latam',
+        anchorUsd: WEB_CON_IA.priceAnchorUsd,
+        specialUsd: WEB_CON_IA.priceLatamUsd,
+        checkout: 'meet',
+        badge: 'Precio LatAm · lanzamiento',
+        ctaBuyLabel: `Reservar a USD ${WEB_CON_IA.priceLatamUsd}`,
+        priceNote:
+            'En LatAm cierras con el asesor por Meet (o WhatsApp). Te confirma el cupo a USD 129 y el pago. Ancla USD 500.',
+    };
+}
 
 export function webConIaWhatsApp(message: string) {
     return whatsAppHref(message);
@@ -183,4 +234,8 @@ export const WEB_CON_IA_WHATSAPP_PAGO = webConIaWhatsApp(
 
 export const WEB_CON_IA_WHATSAPP_ASESORIA = webConIaWhatsApp(
     'Hola, quiero asesoría Web con IA antes de pagar',
+);
+
+export const WEB_CON_IA_WHATSAPP_LATAM = webConIaWhatsApp(
+    'Hola, quiero Web con IA LatAm a USD 129. ¿Agendamos Meet?',
 );

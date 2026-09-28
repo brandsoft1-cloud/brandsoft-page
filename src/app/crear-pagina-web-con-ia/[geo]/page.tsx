@@ -9,6 +9,7 @@ import {
     isWebConIaGeoSlug,
     webConIaGeoStaticParams,
 } from '@/data/education/web-con-ia-geo';
+import { resolveWebConIaPricing } from '@/data/education/web-con-ia';
 
 type Props = { params: Promise<{ geo: string }> };
 
@@ -43,6 +44,7 @@ export default async function WebConIaGeoRoute({ params }: Props) {
     if (!isWebConIaGeoSlug(raw)) notFound();
 
     const { market, copy } = getWebConIaGeoPage(raw);
+    const pricing = resolveWebConIaPricing(market.slug);
 
     return (
         <EducationFrame>
@@ -51,7 +53,7 @@ export default async function WebConIaGeoRoute({ params }: Props) {
                     name: `${WEB_CON_IA.cardTitle} · ${market.countryName}`,
                     description: copy.metaDescription,
                     path: market.path,
-                    priceUsd: WEB_CON_IA.priceSpecialUsd,
+                    priceUsd: pricing.specialUsd,
                 })}
             />
             <JsonLd data={faqJsonLd([...copy.faqs])} />

@@ -21,8 +21,9 @@ export default function AsesoriaCta({ meetUrl, whatsappUrl }: Props) {
                     Habla con el asesor
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-700">
-                    Te atiende nuestro socio por Google Meet: resuelves dudas y cierras ahí. Si
-                    preferís coordinar primero, escribimos por WhatsApp.
+                    Te atiende nuestro socio por Google Meet. En LatAm cierras a USD 129 ahí mismo; en
+                    Texas / US el precio es USD 190 (PayPal en la página). Si preferís coordinar primero,
+                    escribimos por WhatsApp.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                     <a

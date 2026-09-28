@@ -53,7 +53,7 @@ export default function WebConIaHubPage() {
                     name: WEB_CON_IA.cardTitle,
                     description: copy.metaDescription,
                     path: WEB_CON_IA.path,
-                    priceUsd: WEB_CON_IA.priceSpecialUsd,
+                    priceUsd: WEB_CON_IA.priceLatamUsd,
                 })}
             />
             <JsonLd data={faqJsonLd([...copy.faqs])} />

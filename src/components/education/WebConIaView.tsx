@@ -2,7 +2,9 @@ import Link from 'next/link';
 import {
     WEB_CON_IA,
     WEB_CON_IA_WHATSAPP_ASESORIA,
+    WEB_CON_IA_WHATSAPP_LATAM,
     WEB_CON_IA_WHATSAPP_PAGO,
+    resolveWebConIaPricing,
 } from '@/data/education/web-con-ia';
 import {
     WEB_CON_IA_GEO_MARKETS,
@@ -56,6 +58,8 @@ function GeoSwitch({ active }: { active: WebConIaGeoSlug | null | undefined }) {
 
 export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
     const place = marketLabel ?? 'LatAm';
+    const pricing = resolveWebConIaPricing(geo);
+    const isLatam = pricing.checkout === 'meet';
 
     return (
         <article>
@@ -63,6 +67,9 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                 <GeoSwitch active={geo} />
                 <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-[#6D28D9]">
                     BrandSoft Education · {WEB_CON_IA.cardTitle} · {place}
+                </p>
+                <p className="mt-2 inline-flex rounded-full bg-[#E3F5EF] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#047857]">
+                    {pricing.badge} · USD {pricing.specialUsd}
                 </p>
                 <h1 className="mt-3 max-w-4xl font-heading text-4xl font-bold leading-tight tracking-tight text-slate-950 md:text-5xl">
                     {copy.headline}
@@ -76,19 +83,48 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                     <a
-                        href="#comprar"
+                        href={isLatam ? '#asesoria' : '#comprar'}
                         className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#047857] px-6 py-3 text-center text-base font-semibold text-white hover:bg-[#065f46]"
                     >
-                        Comprar por USD {WEB_CON_IA.priceSpecialUsd}
+                        {pricing.ctaBuyLabel}
                     </a>
                     <a
-                        href="#asesoria"
+                        href={isLatam ? '#comprar' : '#asesoria'}
                         className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#047857] bg-white px-6 py-3 text-center text-base font-semibold text-[#047857] hover:bg-[#E3F5EF]"
                     >
-                        Hablar con el asesor
+                        {isLatam ? 'Ver qué incluye' : 'Hablar con el asesor'}
                     </a>
                 </div>
             </header>
+
+            <section className={`${section} bg-[#E3F5EF]`} aria-labelledby="roi">
+                <h2 id="roi" className={h2}>
+                    Se paga solo con tu primera landing
+                </h2>
+                <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-800">
+                    {WEB_CON_IA.roiLine} No vendemos “un curso caro”: vendemos el método para cobrar sin
+                    regalar horas.
+                </p>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                    <li className="rounded-2xl bg-white p-4">
+                        <p className="font-mono text-sm text-[#047857]">01</p>
+                        <p className="mt-1 font-semibold text-slate-950">Arma la web</p>
+                        <p className="mt-1 text-sm text-slate-700">IA + Next.js + Vercel en 2×90 min.</p>
+                    </li>
+                    <li className="rounded-2xl bg-white p-4">
+                        <p className="font-mono text-sm text-[#047857]">02</p>
+                        <p className="mt-1 font-semibold text-slate-950">Cobra con alcance fijo</p>
+                        <p className="mt-1 text-sm text-slate-700">Guion WhatsApp + ancla + qué no incluye.</p>
+                    </li>
+                    <li className="rounded-2xl bg-white p-4">
+                        <p className="font-mono text-sm text-[#047857]">03</p>
+                        <p className="mt-1 font-semibold text-slate-950">Recuperas el ticket</p>
+                        <p className="mt-1 text-sm text-slate-700">
+                            Una venta a USD 200–400 cubre el webinar.
+                        </p>
+                    </li>
+                </ul>
+            </section>
 
             <section className={`${section} bg-[#F2EBFD]`} aria-labelledby="sintomas">
                 <h2 id="sintomas" className={h2}>
@@ -202,17 +238,19 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                 className={`${section} scroll-mt-24 bg-[#1E1B2E] text-white`}
                 aria-labelledby="precio"
             >
-                <h2 id="precio" className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+                <p className="text-sm font-semibold uppercase tracking-widest text-emerald-300">
+                    {pricing.badge}
+                </p>
+                <h2 id="precio" className="mt-2 font-heading text-3xl font-bold tracking-tight md:text-4xl">
                     Precio de lanzamiento
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-slate-300">
                     Valor del programa{' '}
-                    <span className="line-through">USD {WEB_CON_IA.priceAnchorUsd}</span>
+                    <span className="line-through">USD {pricing.anchorUsd}</span>
                     {' · '}
-                    <span className="font-semibold text-white">
-                        hoy USD {WEB_CON_IA.priceSpecialUsd}
-                    </span>
+                    <span className="font-semibold text-white">hoy USD {pricing.specialUsd}</span>
                 </p>
+                <p className="mt-3 max-w-2xl text-base text-emerald-200/90">{WEB_CON_IA.roiLine}</p>
                 <ul className="mt-6 grid max-w-xl gap-2 text-slate-200">
                     {WEB_CON_IA.includes.map((item) => (
                         <li key={item} className="flex gap-2">
@@ -223,11 +261,64 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                         </li>
                     ))}
                 </ul>
-                <div className="mt-8 rounded-2xl bg-white p-5 text-slate-900 sm:p-6">
-                    <p className="mb-4 text-sm font-semibold text-slate-700">Pagar con PayPal</p>
-                    <PayPalHostedButton />
-                </div>
-                <p className="mt-4 text-sm text-slate-400">{copy.marketNote}</p>
+
+                {isLatam ? (
+                    <div className="mt-8 space-y-4">
+                        <div className="rounded-2xl bg-white p-5 text-slate-900 sm:p-6">
+                            <p className="text-sm font-semibold text-slate-700">
+                                LatAm: cierra con el asesor (Meet)
+                            </p>
+                            <p className="mt-2 text-sm text-slate-600">
+                                El socio te confirma el cupo a USD {pricing.specialUsd} y te indica cómo
+                                pagar. Sin fricción de tarjeta internacional si preferís transferencia.
+                            </p>
+                            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                                <a
+                                    href={WEB_CON_IA.socioCierreMeetUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#047857] px-6 py-3 text-base font-semibold text-white hover:bg-[#065f46]"
+                                >
+                                    Entrar a la Meet · USD {pricing.specialUsd}
+                                </a>
+                                <a
+                                    href={WEB_CON_IA_WHATSAPP_LATAM}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#047857] px-6 py-3 text-base font-semibold text-[#047857] hover:bg-[#E3F5EF]"
+                                >
+                                    WhatsApp · quiero el LatAm
+                                </a>
+                            </div>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                            ¿Estás en Texas / US?{' '}
+                            <Link href="/crear-pagina-web-con-ia/tx" className="text-emerald-300 underline">
+                                Ve al precio Texas USD {WEB_CON_IA.priceTxUsd} con PayPal
+                            </Link>
+                            .
+                        </p>
+                    </div>
+                ) : (
+                    <div className="mt-8 space-y-4">
+                        <div className="rounded-2xl bg-white p-5 text-slate-900 sm:p-6">
+                            <p className="mb-4 text-sm font-semibold text-slate-700">
+                                Pagar con PayPal · USD {pricing.specialUsd}
+                            </p>
+                            <PayPalHostedButton />
+                        </div>
+                        <p className="text-sm text-slate-400">
+                            ¿Estás en LatAm?{' '}
+                            <Link href={WEB_CON_IA.path} className="text-emerald-300 underline">
+                                Precio LatAm desde USD {WEB_CON_IA.priceLatamUsd}
+                            </Link>{' '}
+                            — cierra con el asesor.
+                        </p>
+                    </div>
+                )}
+
+                <p className="mt-4 text-sm text-slate-400">{pricing.priceNote}</p>
+                <p className="mt-2 text-sm text-slate-500">{copy.marketNote}</p>
             </section>
 
             <section className={`${section} bg-[#F2EBFD]`} aria-labelledby="live">
@@ -239,6 +330,11 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                     después del pago. La grabación queda disponible {WEB_CON_IA.replayMonths} meses.
                 </p>
             </section>
+
+            <AsesoriaCta
+                meetUrl={WEB_CON_IA.socioCierreMeetUrl}
+                whatsappUrl={isLatam ? WEB_CON_IA_WHATSAPP_LATAM : WEB_CON_IA_WHATSAPP_ASESORIA}
+            />
 
             <section id="ya-pague" className={`${section} scroll-mt-24`} aria-labelledby="postpago">
                 <h2 id="postpago" className={h2}>
@@ -257,11 +353,6 @@ export default function WebConIaView({ copy, geo = null, marketLabel }: Props) {
                     Confirmar pago por WhatsApp
                 </a>
             </section>
-
-            <AsesoriaCta
-                meetUrl={WEB_CON_IA.socioCierreMeetUrl}
-                whatsappUrl={WEB_CON_IA_WHATSAPP_ASESORIA}
-            />
 
             <section className={`${section} bg-white`} aria-labelledby="no-promesa">
                 <h2 id="no-promesa" className={h2}>

@@ -35,7 +35,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA Colombia',
         metaTitle: 'Crear página web con IA Colombia | BrandSoft Education',
         metaDescription:
-            'Webinar BrandSoft Education en Colombia: crea y vende una landing con IA + Next.js sin programar. Deploy Vercel, dominio, SEO básico. Precio especial USD 190.',
+            'Webinar BrandSoft Education en Colombia: crea y vende una landing con IA + Next.js sin programar. Deploy Vercel, dominio, SEO básico. Precio LatAm desde USD 129 (cierre con asesor).',
         headline: 'Crea (y vende) una página web con IA en Colombia',
         lede: 'Para emprendedores, freelancers y equipos en Bogotá, Medellín, Cali y el resto del país. Dos lives de 90 min: landing en producción + método para cobrarla sin regalar horas.',
         symptoms: [
@@ -43,7 +43,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'Uso ChatGPT pero no sé dejar la página en internet.',
             'Quiero cobrar landings a clientes locales o remotos.',
         ],
-        marketNote: 'Foco Colombia. Un solo live para LatAm + Texas. Precios en USD.',
+        marketNote: 'Foco Colombia. Precio LatAm USD 129 · Texas USD 190. Un solo live.',
         localFaqs: [
             {
                 q: '¿El horario es para Colombia?',
@@ -62,7 +62,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA México',
         metaTitle: 'Crear página web con IA México | BrandSoft Education',
         metaDescription:
-            'Webinar BrandSoft Education en México: landing con IA + Next.js sin programar. Vercel, dominio, SEO básico y guion de venta. Precio especial USD 190.',
+            'Webinar BrandSoft Education en México: landing con IA + Next.js sin programar. Vercel, dominio, SEO básico y guion de venta. Precio LatAm desde USD 129 (cierre con asesor).',
         headline: 'Crea (y vende) una página web con IA en México',
         lede: 'Para profesionales en CDMX, Guadalajara, Monterrey y el resto del país que quieren su web o cobrar landings. Dos sesiones de 90 min con método y deploy.',
         symptoms: [
@@ -70,7 +70,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'No quiero pelearme con WordPress lento.',
             'Quiero un flujo que pueda repetir y cobrar en México.',
         ],
-        marketNote: 'Foco México. Mismo live global. Precios en USD.',
+        marketNote: 'Foco México. Precio LatAm USD 129 · Texas USD 190. Mismo live.',
         localFaqs: [
             {
                 q: '¿Puedo tomar el webinar desde México?',
@@ -89,7 +89,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA Perú',
         metaTitle: 'Crear página web con IA Perú | BrandSoft Education',
         metaDescription:
-            'Webinar BrandSoft Education en Perú: crea una landing con IA + Next.js, súbela a Vercel y aprende a venderla. USD 190 lanzamiento.',
+            'Webinar BrandSoft Education en Perú: crea una landing con IA + Next.js, súbela a Vercel y aprende a venderla. Precio LatAm desde USD 129.',
         headline: 'Crea (y vende) una página web con IA en Perú',
         lede: 'Para talento en Lima y el resto del Perú: dos webinars para salir con URL pública y un guion comercial claro.',
         symptoms: [
@@ -97,11 +97,11 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'Quiero entregar algo moderno (Next.js) sin ser developer senior.',
             'Necesito precio y alcance para no regalar revisiones.',
         ],
-        marketNote: 'Foco Perú. Mismo live. Precios en USD.',
+        marketNote: 'Foco Perú. Precio LatAm USD 129 · Texas USD 190. Mismo live.',
         localFaqs: [
             {
                 q: '¿El pago es en soles?',
-                a: 'El checkout es en USD por PayPal. Puedes pagar con tarjeta; el banco convierte según tu tipo de cambio.',
+                a: 'El precio LatAm es USD 129. Cierras con el asesor por Meet (o WhatsApp): te confirma el cupo y cómo pagar. Si pagás con tarjeta en USD, el banco convierte a soles.',
             },
         ],
     },
@@ -116,7 +116,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA Argentina',
         metaTitle: 'Crear página web con IA Argentina | BrandSoft Education',
         metaDescription:
-            'Webinar BrandSoft Education en Argentina: landing con IA + Next.js sin programar. Deploy, dominio, SEO y cómo venderla. Precio especial USD 190.',
+            'Webinar BrandSoft Education en Argentina: landing con IA + Next.js sin programar. Deploy, dominio, SEO y cómo venderla. Precio LatAm desde USD 129 (cierre con asesor).',
         headline: 'Crea (y vende) una página web con IA en Argentina',
         lede: 'Para freelancers y emprendedores en Buenos Aires, Córdoba, Rosario y el resto del país. Método + deploy + guion de venta en USD.',
         symptoms: [
@@ -124,7 +124,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'Necesito un stack simple: IA + Next + Vercel.',
             'Me trabo en DNS y dominio y pierdo el cierre con el cliente.',
         ],
-        marketNote: 'Foco Argentina. Mismo live. Precios en USD.',
+        marketNote: 'Foco Argentina. Precio LatAm USD 129 · Texas USD 190. Mismo live.',
         localFaqs: [
             {
                 q: '¿Sirve si cobro clientes afuera?',
@@ -143,7 +143,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA Chile',
         metaTitle: 'Crear página web con IA Chile | BrandSoft Education',
         metaDescription:
-            'Webinar BrandSoft Education en Chile: crea y vende landings con IA + Next.js. Vercel, dominio, SEO básico. Precio especial USD 190.',
+            'Webinar BrandSoft Education en Chile: crea y vende landings con IA + Next.js. Vercel, dominio, SEO básico. Precio LatAm desde USD 129 (cierre con asesor).',
         headline: 'Crea (y vende) una página web con IA en Chile',
         lede: 'Para profesionales en Santiago y el resto de Chile que quieren su página o un servicio vendible de landings.',
         symptoms: [
@@ -151,7 +151,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'Quiero un proceso repetible para clientes chilenos.',
             'No quiero cursos eternos: quiero salir con URL.',
         ],
-        marketNote: 'Foco Chile. Mismo live. Precios en USD.',
+        marketNote: 'Foco Chile. Precio LatAm USD 129 · Texas USD 190. Mismo live.',
         localFaqs: [
             {
                 q: '¿Incluye grabación si no puedo en vivo?',
@@ -170,7 +170,7 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
         keyword: 'crear página web con IA Texas',
         metaTitle: 'Crear página web con IA Texas | BrandSoft Education',
         metaDescription:
-            'Mismo webinar BrandSoft Education para Texas: landing con IA + Next.js, deploy en Vercel, SEO básico y guion de venta. Precio lanzamiento USD 190.',
+            'Mismo webinar BrandSoft Education para Texas: landing con IA + Next.js, deploy en Vercel, SEO básico y guion de venta. Precio Texas USD 190 (PayPal). LatAm desde USD 129.',
         headline: 'Crear (y vender) una página web con IA — Texas',
         lede: 'Mismo live 2×90 para profesionales en Texas: landing en producción, checklist de dominio y guion de oferta. LatAm es el mercado primario; Texas tiene el mismo producto en USD.',
         symptoms: [
@@ -179,11 +179,15 @@ export const WEB_CON_IA_GEO_MARKETS: readonly WebConIaGeoMarket[] = [
             'Quiero una oferta repetible para vender local o remoto.',
         ],
         marketNote:
-            'Texas es disponibilidad de producto. El GTM primario sigue en LatAm; misma cohorte live y precios en USD.',
+            'Texas / US: mismo live y materiales. Checkout PayPal USD 190. LatAm cierra con asesor a USD 129.',
         localFaqs: [
             {
                 q: '¿Es distinto a la oferta LatAm?',
-                a: 'No. Mismas dos sesiones, materiales y precio de lanzamiento USD 190. Entras al mismo live.',
+                a: 'Mismo webinar y materiales. Precio Texas / US: USD 190 con PayPal. LatAm: USD 129 cerrando con el asesor por Meet.',
+            },
+            {
+                q: '¿Puedo pagar ya?',
+                a: 'Sí. En esta página usás el botón PayPal (USD 190). Después escribís por WhatsApp con tu correo para recibir fecha, repo y Meet del live.',
             },
         ],
     },

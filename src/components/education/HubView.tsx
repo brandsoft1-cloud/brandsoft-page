@@ -82,7 +82,8 @@ export default function HubView() {
                         </p>
                         <p className="mt-4 text-slate-700">{WEB_CON_IA.cardBody}</p>
                         <p className="mt-4 font-mono text-sm text-[#047857]">
-                            Ancla USD {WEB_CON_IA.priceAnchorUsd} · especial USD {WEB_CON_IA.priceSpecialUsd}
+                            LatAm desde USD {WEB_CON_IA.priceLatamUsd} · Texas USD {WEB_CON_IA.priceTxUsd}{' '}
+                            · ancla USD {WEB_CON_IA.priceAnchorUsd}
                         </p>
                         <Link
                             href={WEB_CON_IA.path}
