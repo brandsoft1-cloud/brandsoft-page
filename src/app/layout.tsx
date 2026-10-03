@@ -5,6 +5,7 @@ import { defaultRobotsMetadata, SITE_URL } from "@/lib/robots-config";
 import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,6 +71,7 @@ export default function RootLayout({
         {children}
         <StickyMobileCta />
         <WhatsAppWidget />
+        <Analytics />
       </body>
     </html>
   );

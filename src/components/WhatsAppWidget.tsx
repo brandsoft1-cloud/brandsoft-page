@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { whatsAppHref } from '@/lib/contact';
 import { isEducationLanding } from '@/lib/education-routes';
+import { trackEvent } from '@/lib/analytics';
 
 export default function WhatsAppWidget() {
     const pathname = usePathname();
@@ -20,13 +21,11 @@ export default function WhatsAppWidget() {
     }, []);
 
     const handleWhatsAppClick = () => {
-        // Enviar evento de conversión simulado a dataLayer
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-            (window as any).gtag('event', 'lead_whatsapp_click', {
-                'event_category': 'Leads',
-                'event_label': 'WhatsApp Widget'
-            });
-        }
+        trackEvent(
+            'lead_whatsapp_click',
+            { link_text: 'WhatsApp Widget', page_path: window.location.pathname },
+            'Contact',
+        );
         window.open(
             whatsAppHref(
                 'Hola Mauricio, vengo de la web de BrandSoft y quiero cotizar un servicio (software IA, SEO/GEO o leads B2B).'
