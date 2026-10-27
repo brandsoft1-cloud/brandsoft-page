@@ -6,6 +6,8 @@ import { NEED_OPTIONS } from '@/data/solutions/home';
 import { whatsAppHref } from '@/lib/contact';
 import { trackSolutionsEvent } from '@/lib/solutions-analytics';
 
+type NeedValue = (typeof NEED_OPTIONS)[number]['value'];
+
 type Props = {
     id?: string;
     className?: string;
@@ -15,7 +17,7 @@ export default function DiagnosticForm({ id = 'diagnostico', className }: Props)
     const [name, setName] = useState('');
     const [company, setCompany] = useState('');
     const [contact, setContact] = useState('');
-    const [need, setNeed] = useState(NEED_OPTIONS[0].value);
+    const [need, setNeed] = useState<NeedValue>(NEED_OPTIONS[0].value);
     const [message, setMessage] = useState('');
     const [consent, setConsent] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -165,7 +167,10 @@ export default function DiagnosticForm({ id = 'diagnostico', className }: Props)
                                 id="diag-need"
                                 name="need"
                                 value={need}
-                                onChange={(e) => setNeed(e.target.value)}
+                                onChange={(e) => {
+                                    const next = e.target.value as NeedValue;
+                                    if (NEED_OPTIONS.some((o) => o.value === next)) setNeed(next);
+                                }}
                                 onFocus={onFocusField}
                                 className="w-full rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 text-white focus:border-violet-500 focus:outline-none"
                             >
