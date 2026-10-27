@@ -16,7 +16,6 @@ import {
     SOLUTIONS_FAQS,
     SOLUTIONS_HOME,
     SOLUTIONS_PROBLEMS,
-    WORK_MODES,
 } from '@/data/solutions/home';
 import { whatsAppHref } from '@/lib/contact';
 import { trackSolutionsEvent } from '@/lib/solutions-analytics';
@@ -302,34 +301,6 @@ export default function SolutionsHome() {
                             Agenda un diagnóstico
                         </a>
                     </div>
-                </div>
-            </section>
-
-            {/* Modalidades */}
-            <section id="modalidades" className="py-20 md:py-24 scroll-mt-24" aria-labelledby="modalidades-titulo">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeading
-                        id="modalidades-titulo"
-                        eyebrow="Modalidades"
-                        title="Cómo puedes trabajar con nosotros"
-                        lede="Los precios se definen tras el diagnóstico. Aquí ves el tipo de engagement — no descuentos inventados."
-                    />
-                    <ul className="grid sm:grid-cols-2 gap-5">
-                        {WORK_MODES.map((mode) => (
-                            <li key={mode.name} className="rounded-3xl border border-white/10 p-6">
-                                <h3 className="font-heading text-xl font-bold text-white">{mode.name}</h3>
-                                <p className="mt-2 text-gray-400">{mode.detail}</p>
-                                <ul className="mt-4 space-y-1.5">
-                                    {mode.includes.map((line) => (
-                                        <li key={line} className="flex gap-2 text-sm text-gray-300">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" aria-hidden />
-                                            {line}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
                 </div>
             </section>
 

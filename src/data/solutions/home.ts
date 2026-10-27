@@ -132,29 +132,6 @@ export const HOW_WE_WORK = [
     { n: '5', title: 'Medición y mejora', detail: 'Revisamos indicadores y ajustamos. Resultados dependen del mercado, del canal y de tu equipo.' },
 ] as const;
 
-export const WORK_MODES = [
-    {
-        name: 'Proyecto puntual',
-        detail: 'Web, automatización o integración con alcance cerrado.',
-        includes: ['Alcance fijo', 'Entrega por hitos', 'Soporte acordado'],
-    },
-    {
-        name: 'Servicio mensual',
-        detail: 'SEO, contenidos, captación o mejora continua.',
-        includes: ['Prioridades del mes', 'Reportes', 'Iteración'],
-    },
-    {
-        name: 'Automatización personalizada',
-        detail: 'Flujos, agentes e integraciones según tu proceso.',
-        includes: ['Mapa del proceso', 'Implementación', 'Pruebas supervisadas'],
-    },
-    {
-        name: 'Solución integral',
-        detail: 'Varios pilares conectados (atraer + convertir + automatizar).',
-        includes: ['Roadmap compartido', 'Un punto de contacto', 'Medición conjunta'],
-    },
-] as const;
-
 export const SOLUTIONS_FAQS = [
     {
         q: '¿Qué tipo de empresas pueden contratar BrandSoft?',
@@ -170,7 +147,7 @@ export const SOLUTIONS_FAQS = [
     },
     {
         q: '¿Cuánto cuesta un proyecto?',
-        a: 'Depende del alcance. En el diagnóstico te damos un rango y qué se cotiza aparte (publicidad, licencias, APIs).',
+        a: 'Lo vemos en el diagnóstico según tu necesidad y alcance. No publicamos paquetes fijos: cada empresa parte de un problema distinto. Separanos honorarios de BrandSoft de publicidad, licencias o APIs cuando apliquen.',
     },
     {
         q: '¿Cómo se mide el resultado?',

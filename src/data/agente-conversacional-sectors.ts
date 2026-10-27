@@ -41,7 +41,7 @@ export const AGENTE_CONVERSACIONAL_SECTORS: AgenteConversacionalSector[] = [
         sectorLabel: 'restaurantes y gastronomía',
         metaTitle: 'Agente de IA para restaurantes | Responde WhatsApp 24/7 | BrandSoft',
         metaDescription:
-            'Agente conversacional para restaurantes en Colombia: pedidos, reservas y preguntas por WhatsApp sin perder clientes. Desde $2.000.000/mes.',
+            'Agente conversacional para restaurantes en Colombia: pedidos, reservas y preguntas por WhatsApp sin perder clientes. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para dueños de restaurante en Colombia',
             headline: 'Te escriben por WhatsApp a las 9 de la noche',
@@ -125,7 +125,7 @@ Implementamos el agente con menú, zonas de domicilio y horarios reales. En la p
         sectorLabel: 'firmas legales y abogados',
         metaTitle: 'Agente de IA para abogados | Captación y consultas 24/7 | BrandSoft',
         metaDescription:
-            'Agente de IA para firmas legales: califica consultas, responde dudas iniciales y envía leads calientes a tu correo. Desde $2.000.000/mes.',
+            'Agente de IA para firmas legales: califica consultas, responde dudas iniciales y envía leads calientes a tu correo. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para socios y gerentes de firma legal',
             headline: 'Un cliente potencial escribe a las 11 pm',
@@ -207,7 +207,7 @@ Con el agente, cada consulta recibe respuesta en minutos: áreas de práctica, q
         sectorLabel: 'clínicas de estética',
         metaTitle: 'Agente de IA para clínicas estéticas | Agenda y WhatsApp 24/7 | BrandSoft',
         metaDescription:
-            'Agente conversacional para clínicas estéticas: responde tratamientos, precios orientativos y agenda citas. Desde $2.000.000/mes en Colombia.',
+            'Agente conversacional para clínicas estéticas: responde tratamientos, precios orientativos y agenda citas. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para dueños de clínica estética',
             headline: 'Te preguntan por el valor del botox a medianoche',
@@ -289,7 +289,7 @@ Hoy el agente educa con los tratamientos autorizados, filtra quién tiene inter�
         sectorLabel: 'clínicas dentales',
         metaTitle: 'Agente de IA para odontología | Citas y consultas 24/7 | BrandSoft',
         metaDescription:
-            'Agente de IA para clínicas dentales en Colombia: urgencias, limpiezas, ortodoncia y agendamiento por WhatsApp. Desde $2.000.000/mes.',
+            'Agente de IA para clínicas dentales en Colombia: urgencias, limpiezas, ortodoncia y agendamiento por WhatsApp. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para odontólogos y gerentes de clínica dental',
             headline: 'El dolor de muela no espera al lunes',
@@ -368,7 +368,7 @@ La primera semana captaron tres urgencias que antes se habrían perdido. El tiem
         sectorLabel: 'empresas de limpieza',
         metaTitle: 'Agente de IA para empresas de limpieza | Cotizaciones 24/7 | BrandSoft',
         metaDescription:
-            'Agente de IA para empresas de limpieza: cotiza servicios, califica clientes B2B y B2C por WhatsApp. Desde $2.000.000/mes.',
+            'Agente de IA para empresas de limpieza: cotiza servicios, califica clientes B2B y B2C por WhatsApp. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para dueños de empresas de aseo y mantenimiento',
             headline: 'Te piden cotización un sábado',
@@ -447,7 +447,7 @@ El agente ahora hace el cuestionario completo 24/7: tipo de inmueble, m², frecu
         sectorLabel: 'inmobiliarias',
         metaTitle: 'Agente de IA para inmobiliarias | Leads y visitas 24/7 | BrandSoft',
         metaDescription:
-            'Agente de IA para inmobiliarias: califica compradores, responde por WhatsApp y agenda visitas. Desde $2.000.000/mes en Colombia.',
+            'Agente de IA para inmobiliarias: califica compradores, responde por WhatsApp y agenda visitas. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para dueños y gerentes de inmobiliaria',
             headline: 'Preguntan por el apartamento del portafolio',
@@ -526,7 +526,7 @@ El agente responde fichas, zonas, rangos orientativos y pregunta presupuesto y u
         sectorLabel: 'colegios y academias',
         metaTitle: 'Agente de IA para educación | Admisiones y WhatsApp 24/7 | BrandSoft',
         metaDescription:
-            'Agente de IA para colegios y academias: responde admisiones, programas y costos orientativos 24/7. Desde $2.000.000/mes.',
+            'Agente de IA para colegios y academias: responde admisiones, programas y costos orientativos 24/7. Inversión según alcance tras diagnóstico.',
         hero: {
             badge: 'Para rectores y directores de admisiones',
             headline: 'Los papás preguntan en enero por cupos',

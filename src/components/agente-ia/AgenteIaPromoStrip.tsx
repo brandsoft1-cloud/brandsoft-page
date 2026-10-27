@@ -22,7 +22,8 @@ export default function AgenteIaPromoStrip({ slug, sectorLabel }: Props) {
                             ¿Pierdes clientes de {sectorLabel} por no responder WhatsApp a tiempo?
                         </h2>
                         <p className="text-sm text-gray-500 mt-1">
-                            Atiende 24/7, califica leads y manda resumen al correo. Desde $2.000.000/mes.
+                            Atiende 24/7, califica leads y manda resumen al correo. La inversión se
+                            define tras un diagnóstico corto.
                         </p>
                     </div>
                 </div>

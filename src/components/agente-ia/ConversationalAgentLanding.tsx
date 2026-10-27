@@ -11,10 +11,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
-import {
-    AGENTE_CONVERSACIONAL_PRICE,
-    type AgenteConversacionalSector,
-} from '@/data/agente-conversacional-sectors';
+import { type AgenteConversacionalSector } from '@/data/agente-conversacional-sectors';
 import { whatsAppHref } from '@/lib/contact';
 
 type Props = {
@@ -22,7 +19,6 @@ type Props = {
 };
 
 const COMPARISON_ROWS = [
-    { label: 'Costo mensual aprox.', employee: '$2.500.000 – $3.500.000 + prestaciones', agent: `${AGENTE_CONVERSACIONAL_PRICE.label} COP fijo` },
     { label: 'Disponibilidad', employee: '8 h/día, turnos', agent: '24/7/365' },
     { label: 'Vacaciones y incapacidades', employee: 'Sí — te quedas sin cobertura', agent: 'Nunca' },
     { label: 'Tiempo de respuesta', employee: 'Minutos u horas', agent: 'Segundos' },
@@ -90,7 +86,7 @@ export default function ConversationalAgentLanding({ sector }: Props) {
                         </a>
                     </div>
                     <p className="mt-6 text-xs text-gray-500 uppercase tracking-widest">
-                        WhatsApp · Web · Instagram · {AGENTE_CONVERSACIONAL_PRICE.label}/mes
+                        WhatsApp · Web · Instagram · inversión según diagnóstico
                     </p>
                 </div>
             </section>
@@ -208,29 +204,34 @@ export default function ConversationalAgentLanding({ sector }: Props) {
                 </div>
             </section>
 
-            {/* 6. PRECIO */}
+            {/* 6. Inversión — sin precio público */}
             <section className="py-16 px-4 bg-gradient-to-b from-violet-950/30 to-black border-b border-white/10">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="font-heading text-3xl md:text-4xl font-black mb-4">
-                        Inversión: {AGENTE_CONVERSACIONAL_PRICE.label}{' '}
-                        <span className="text-gray-500 text-2xl font-bold">/ mes</span>
+                        Inversión a tu medida
                     </h2>
                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                        No es un gasto de &quot;tecnología bonita&quot;. Es menos que un empleado de atención y evita
-                        perder {sector.lostClientAnchor}.
+                        No publicamos un precio genérico: el alcance depende de canales, volumen y
+                        guión. En el diagnóstico te proponemos algo concreto para{' '}
+                        {sector.sectorLabel} — y cómo evita perder {sector.lostClientAnchor}.
                     </p>
-                    <p className="text-violet-300 font-semibold mb-8">
-                        Un solo cliente recuperado paga varios meses del agente.
-                    </p>
-                    <a
-                        href={waDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 font-black text-sm uppercase"
-                    >
-                        <MessageCircle className="w-5 h-5" />
-                        Cotizar para mi {sector.sectorLabel.split(' ')[0]}
-                    </a>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a
+                            href="/#diagnostico"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 font-black text-sm uppercase"
+                        >
+                            Agenda un diagnóstico
+                        </a>
+                        <a
+                            href={waDemo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 font-black text-sm uppercase"
+                        >
+                            <MessageCircle className="w-5 h-5" aria-hidden />
+                            WhatsApp · {sector.sectorLabel.split(' ')[0]}
+                        </a>
+                    </div>
                 </div>
             </section>
 
