@@ -16,6 +16,7 @@ import {
     ShieldCheck
 } from "lucide-react";
 import Link from "next/link";
+import { whatsAppHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
     title: "Agentes de IA y Automatizaciones (Sendell)",
@@ -40,7 +41,7 @@ const solutions = [
     },
     {
         title: "Sendell Business",
-        description: "Hub de automatización empresarial para ventas y operaciones. Captura leads, automatiza contabilidad (DIAN) y procesa hasta 500 interacciones diarias.",
+        description: "Hub de automatización empresarial para ventas y operaciones. Captura leads, apoya procesos contables y atiende consultas con supervisión humana cuando hace falta.",
         icon: BrainCircuit,
         color: "emerald"
     }
@@ -88,10 +89,23 @@ export default function AIPage() {
                             Automatizamos tus ventas y soporte mediante <span className="text-white font-medium">Agentes de IA</span> que actúan y aprenden como humanos. Ahorra tiempo y recursos operando 24/7.
                         </p>
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                            <Link href="#contacto" className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-emerald-400 hover:text-white transition-all flex items-center gap-2">
-                                Implementar mi Agente AI
-                                <ChevronRight className="w-4 h-4" />
+                            <Link
+                                href="/#diagnostico"
+                                className="bg-violet-600 text-white px-8 py-4 rounded-full font-bold hover:bg-violet-500 transition-all flex items-center gap-2"
+                            >
+                                Agenda un diagnóstico
+                                <ChevronRight className="w-4 h-4" aria-hidden />
                             </Link>
+                            <a
+                                href={whatsAppHref(
+                                    'Hola BrandSoft, quiero un diagnóstico de automatización e IA. Vengo de /ia-automatizaciones.',
+                                )}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="border border-emerald-500/50 text-emerald-400 px-8 py-4 rounded-full font-bold hover:bg-emerald-500/10 transition-all"
+                            >
+                                WhatsApp
+                            </a>
                         </div>
                     </div>
                     <div className="relative group">
@@ -115,8 +129,11 @@ export default function AIPage() {
                                 </div>
                                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed mb-6">{item.description}</p>
-                                <Link href="#contacto" className="mt-auto text-emerald-400 font-bold text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
-                                    Saber más <ChevronRight className="w-4 h-4" />
+                                <Link
+                                    href="/#diagnostico"
+                                    className="mt-auto text-emerald-400 font-bold text-sm flex items-center gap-2 hover:translate-x-1 transition-transform"
+                                >
+                                    Agenda un diagnóstico <ChevronRight className="w-4 h-4" aria-hidden />
                                 </Link>
                             </div>
                         ))}
@@ -128,7 +145,7 @@ export default function AIPage() {
                             En el exigente entorno industrial y residencial de **Bogotá**, el tiempo de respuesta es la métrica reina. Nuestras integraciones de **Sendell** permiten que inmobiliarias, constructoras y empresas de servicios técnicos (como vactor y alcantarillado) tengan un agente capaz de citar, agendar y hasta facturar de forma autónoma.
                         </p>
                         <p>
-                            **NexaHelp Soporte AI**, por ejemplo, revoluciona la atención de urgencias permitiendo que la IA identifique el problema a través de una foto enviada por WhatsApp y asigne la cuadrilla técnica más cercana, reduciendo errores humanos en el despacho hasta en un 60%.
+                            **NexaHelp Soporte AI**, por ejemplo, apoya la atención de urgencias permitiendo que la IA ayude a identificar el problema a través de una foto enviada por WhatsApp y prepare el caso para asignar la cuadrilla técnica más adecuada, con escalado a un humano cuando el caso lo requiere.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 not-prose mt-12">
                             <div className="p-6 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl">
