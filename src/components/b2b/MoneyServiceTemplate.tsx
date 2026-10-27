@@ -5,9 +5,18 @@ import Contact from '@/components/Contact';
 import TrustAuthorityStrip from '@/components/b2b/TrustAuthorityStrip';
 import JsonLdFaq from '@/components/b2b/JsonLdFaq';
 import { whatsAppHref } from '@/lib/contact';
-import { Calendar, ClipboardCheck, MessageCircle } from 'lucide-react';
+import { Calendar, MessageCircle } from 'lucide-react';
 import type { MoneyPageSlug } from '@/data/b2b-hub-structure';
 import { MONEY_PAGES } from '@/data/b2b-hub-structure';
+
+const WA_BY_SLUG: Record<MoneyPageSlug, string> = {
+    'desarrollo-software-ia':
+        'Hola BrandSoft, quiero un diagnóstico de software a medida / IA. Vengo de /desarrollo-software-ia.',
+    'posicionamiento-seo-geo':
+        'Hola BrandSoft, quiero un diagnóstico de SEO / GEO. Vengo de /posicionamiento-seo-geo.',
+    'generacion-leads-b2b':
+        'Hola BrandSoft, quiero un diagnóstico de captación / leads B2B. Vengo de /generacion-leads-b2b.',
+};
 
 export function buildMoneyPageMetadata(slug: MoneyPageSlug): Metadata {
     const p = MONEY_PAGES[slug];
@@ -26,12 +35,7 @@ export function buildMoneyPageMetadata(slug: MoneyPageSlug): Metadata {
 
 export default function MoneyServiceTemplate({ slug }: { slug: MoneyPageSlug }) {
     const p = MONEY_PAGES[slug];
-    const waDemo = whatsAppHref(
-        `Hola BrandSoft, quiero agendar una demostración. Me interesa: ${p.title}.`
-    );
-    const waAudit = whatsAppHref(
-        `Hola BrandSoft, solicito una auditoría gratuita orientada a: ${p.title}.`
-    );
+    const wa = whatsAppHref(WA_BY_SLUG[slug]);
 
     return (
         <main className="min-h-screen bg-black text-white selection:bg-violet-500/30 pt-20">
@@ -41,7 +45,7 @@ export default function MoneyServiceTemplate({ slug }: { slug: MoneyPageSlug }) 
             <section className="relative py-16 md:py-24 px-4 border-b border-white/10 overflow-hidden">
                 <div className="absolute top-0 right-0 w-[min(100%,480px)] h-80 bg-violet-600/15 blur-[100px] rounded-full pointer-events-none" />
                 <div className="max-w-4xl mx-auto relative z-10">
-                    <nav className="text-xs text-gray-500 mb-8">
+                    <nav className="text-xs text-gray-500 mb-8" aria-label="Miga de pan">
                         <Link href="/" className="hover:text-white">
                             Inicio
                         </Link>
@@ -53,34 +57,30 @@ export default function MoneyServiceTemplate({ slug }: { slug: MoneyPageSlug }) 
                     </h1>
                     <p className="text-xl text-gray-400 leading-relaxed mb-10">{p.valueProp}</p>
                     <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-                        <a
-                            href={waDemo}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/#diagnostico"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 font-black text-sm uppercase tracking-wide shadow-xl shadow-violet-600/25"
                         >
-                            <Calendar className="w-5 h-5" />
-                            Agendar demostración
-                        </a>
+                            <Calendar className="w-5 h-5" aria-hidden />
+                            Agenda un diagnóstico
+                        </Link>
                         <a
-                            href={waAudit}
+                            href={wa}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 font-black text-sm uppercase tracking-wide"
                         >
-                            <ClipboardCheck className="w-5 h-5" />
-                            Auditoría gratuita
-                        </a>
-                        <a
-                            href={whatsAppHref(`Consulta comercial: ${p.title}`)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white/5 border border-white/10 hover:border-white/25 text-sm font-bold"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            Hablar con un asesor
+                            <MessageCircle className="w-5 h-5" aria-hidden />
+                            WhatsApp
                         </a>
                     </div>
+                    <p className="mt-6 text-sm text-gray-500">
+                        También puedes explorar{' '}
+                        <Link href="/#servicios" className="text-violet-300 hover:underline">
+                            los cinco pilares
+                        </Link>{' '}
+                        en la home.
+                    </p>
                 </div>
             </section>
 

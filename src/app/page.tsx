@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import SolutionsHome from '@/components/solutions/SolutionsHome';
+import JsonLdFaq from '@/components/b2b/JsonLdFaq';
+import { SOLUTIONS_FAQS } from '@/data/solutions/home';
 import { SITE_URL } from '@/lib/robots-config';
 
 export const metadata: Metadata = {
@@ -36,6 +38,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="min-h-screen relative selection:bg-violet-500/30">
+            <JsonLdFaq faqs={[...SOLUTIONS_FAQS]} />
             <Navbar />
             <SolutionsHome />
         </main>

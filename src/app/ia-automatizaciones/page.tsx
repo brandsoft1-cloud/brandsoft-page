@@ -34,7 +34,7 @@ const solutions = [
     },
     {
         title: "NexaHelp Soporte AI",
-        description: "IA de soporte técnico 24/7 en WhatsApp, Web y Email. Interpreta capturas de pantalla, reduce tiempos a <2 mins y escala soporte T2 con 98% de satisfacción.",
+        description: "IA de soporte en WhatsApp, Web y Email. Interpreta capturas, ayuda a reducir tiempos de primera respuesta y escala a un humano cuando el caso lo requiere.",
         icon: Workflow,
         color: "emerald"
     },

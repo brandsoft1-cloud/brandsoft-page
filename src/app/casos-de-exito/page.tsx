@@ -28,23 +28,23 @@ export default function CasosDeExitoPage() {
                     .
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a
-                        href={whatsAppHref('Vi los casos de éxito y quiero agendar una demostración.')}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/#diagnostico"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 font-black text-sm uppercase"
                     >
-                        <Calendar className="w-5 h-5" />
-                        Agendar demostración
-                    </a>
+                        <Calendar className="w-5 h-5" aria-hidden />
+                        Agenda un diagnóstico
+                    </Link>
                     <a
-                        href={whatsAppHref('Solicito auditoría gratuita tras revisar casos de éxito.')}
+                        href={whatsAppHref(
+                            'Vi los casos de éxito y quiero un diagnóstico para mi empresa.',
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-emerald-500/50 text-emerald-400 font-black text-sm uppercase"
                     >
-                        <ClipboardCheck className="w-5 h-5" />
-                        Auditoría gratuita
+                        <ClipboardCheck className="w-5 h-5" aria-hidden />
+                        WhatsApp
                     </a>
                 </div>
             </section>

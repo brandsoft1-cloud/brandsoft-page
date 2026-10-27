@@ -26,25 +26,33 @@ export default function CtaConversionBand({ title, subtitle, whatsappContext }: 
         >
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-600/20 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10 max-w-3xl mx-auto">
-                <p className="text-emerald-400 text-xs font-black uppercase tracking-[0.2em] mb-3">Cupos de asesoría esta semana</p>
+                <p className="text-emerald-400 text-xs font-black uppercase tracking-[0.2em] mb-3">
+                    Siguiente paso
+                </p>
                 <h3 className="font-heading text-2xl md:text-4xl font-black text-white mb-4 leading-tight">{title}</h3>
                 <p className="text-gray-400 text-lg mb-8">{subtitle}</p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                     <a
+                        href="/#diagnostico"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-black text-sm uppercase tracking-wide shadow-xl shadow-violet-600/25 transition-all"
+                    >
+                        Agenda un diagnóstico
+                    </a>
+                    <a
                         href={wa}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wide shadow-xl shadow-emerald-600/25 transition-all hover:scale-[1.02]"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wide shadow-xl shadow-emerald-600/25 transition-all"
                     >
-                        <MessageCircle className="w-5 h-5" />
-                        Escribir por WhatsApp ahora
+                        <MessageCircle className="w-5 h-5" aria-hidden />
+                        WhatsApp
                     </a>
                     <a
                         href="tel:+573213296957"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/20 hover:border-white/40 text-white font-bold text-sm uppercase tracking-wide transition-all"
                     >
-                        <Phone className="w-4 h-4" />
-                        Llamar ahora
+                        <Phone className="w-4 h-4" aria-hidden />
+                        Llamar
                     </a>
                 </div>
             </div>

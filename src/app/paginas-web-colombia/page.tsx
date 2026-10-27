@@ -56,27 +56,23 @@ export default function PaginasWebColombiaPage() {
                         atraer clientes por Google y cerrar oportunidades por WhatsApp y CRM.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-3">
-                        <a
-                            href={whatsAppHref(
-                                'Hola BrandSoft, quiero agendar una demostración para desarrollo de página web en Colombia.'
-                            )}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/#diagnostico"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 font-black text-sm uppercase tracking-wide"
                         >
-                            <Calendar className="w-5 h-5" />
-                            Agendar demostración
-                        </a>
+                            <Calendar className="w-5 h-5" aria-hidden />
+                            Agenda un diagnóstico
+                        </Link>
                         <a
                             href={whatsAppHref(
-                                'Hola BrandSoft, solicito auditoría gratuita de mi sitio web para mejorar posicionamiento y conversión.'
+                                'Hola BrandSoft, quiero un diagnóstico de web / presencia digital en Colombia. Vengo de /paginas-web-colombia.',
                             )}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 font-black text-sm uppercase tracking-wide"
                         >
-                            <ClipboardCheck className="w-5 h-5" />
-                            Auditoría gratuita
+                            <ClipboardCheck className="w-5 h-5" aria-hidden />
+                            WhatsApp
                         </a>
                     </div>
                 </div>
