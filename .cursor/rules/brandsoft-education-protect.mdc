@@ -1,0 +1,29 @@
+---
+description: Zona protegida BrandSoft Education — no alterar mentorías, Web con IA, Career Pack ni datos educativos.
+alwaysApply: true
+---
+
+# BrandSoft Education — Zona protegida
+
+Al trabajar en este repo, **Education está congelada** salvo petición explícita del usuario para Education.
+
+## No modificar (protegido)
+
+- Rutas: `/mentorias/**`, `/crear-pagina-web-con-ia/**`, `/sube-de-nivel` (booking mentoría)
+- Código: `src/components/education/**`, `src/data/education/**`, `src/lib/education-*.ts(x)`, `src/app/api/education/**`
+- Datos: `src/data/mentoria-seo.ts`, `src/data/mentoria-perfiles.ts`
+- Posts blog Education / Mentoría* en `content/blog/`
+- Precios, PayPal, Meet socio, formularios y copy educativos
+
+## Shared-risk (pedir checklist Education)
+
+Antes de editar: `Navbar.tsx`, `layout.tsx`, `globals.css`, `StickyMobileCta`, `WhatsAppWidget`, `Contact.tsx`, `sitemap.ts`, `robots.ts`, `MentorshipSection`.
+
+Checklist mínimo tras el cambio: `/mentorias`, `/mentorias/career-pack`, `/crear-pagina-web-con-ia`, `/sube-de-nivel` cargan y CTAs Education siguen iguales.
+
+## Falsos amigos (NO son Education)
+
+- `/web-ia` → B2B agentes
+- `/soluciones/educacion` → vertical B2B
+
+Skill obligatoria: `brandsoft-education-protect`.

@@ -47,8 +47,8 @@ Usar cuando redactes o aconsejes sin inventar servicios:
 - SEO técnico + GEO (visibilidad en buscadores y motores generativos)
 - Generación de leads B2B
 - Agentes de IA y automatizaciones
-- **Mentorías técnicas:** conseguir trabajo en tech, CV, LinkedIn, simulación de entrevistas, manejo emocional/nervios (todos los niveles: principiante a senior)
-- Landings clave: `/mentorias`, `/sube-de-nivel`, hubs B2B (`/desarrollo-software-ia`, `/posicionamiento-seo-geo`, etc.)
+- **BrandSoft Education:** mentorías técnicas 1 a 1 (conseguir trabajo en tech, CV, LinkedIn, simulación de entrevistas, manejo emocional). Landings: `/mentorias`, Career Pack GEO, Producto Real, Clientes Reales, `/sube-de-nivel`.
+- Landings B2B: `/desarrollo-software-ia`, `/posicionamiento-seo-geo`, etc.
 
 ## Flujo al responder
 
@@ -56,6 +56,17 @@ Usar cuando redactes o aconsejes sin inventar servicios:
 2. Asigna agente (tabla arriba).
 3. Responde en rol, con pasos concretos o entregable (copy, checklist, mensaje WhatsApp, etc.).
 4. Si piden implementación en código del repo `brandsoft-page`, Valeria puede liderar pero respeta convenciones del proyecto (Next.js, componentes existentes).
+
+## Rediseño BrandSoft Solutions (B2B)
+
+Si el tema es **rediseñar la web comercial**, conversión B2B, home Solutions, pilares de servicio, CRO o SEO comercial:
+
+1. Leer plan: `docs/superpowers/plans/2026-10-27-brandsoft-solutions-redesign.md`
+2. Skill orquestadora: `brandsoft-solutions-redesign`
+3. **Obligatorio:** `brandsoft-education-protect` (no tocar Education)
+4. Sub-skills: `brandsoft-solutions-home` · `brandsoft-solutions-services` · `brandsoft-solutions-cro` · `brandsoft-solutions-seo`
+
+Routing de agentes en ese proyecto: Camila (prioridad/alcance) → Daniela (copy home/servicios) → Mateo (CTAs/WhatsApp) → Valeria (código) → Andrés (regresión/checklist).
 
 ## Ejemplos de routing
 

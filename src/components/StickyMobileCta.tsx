@@ -11,7 +11,8 @@ import { isEducationLanding } from '@/lib/education-routes';
  */
 export default function StickyMobileCta() {
     const pathname = usePathname();
-    if (isEducationLanding(pathname)) return null;
+    // Education landings + booking mentoría: no empujar CTA Solutions
+    if (isEducationLanding(pathname) || pathname?.startsWith('/sube-de-nivel')) return null;
 
     return (
         <div
@@ -20,17 +21,23 @@ export default function StickyMobileCta() {
             aria-label="Contacto rápido"
         >
             <p className="text-center text-[10px] font-bold uppercase tracking-widest text-emerald-400/90 mb-1.5">
-                Respuesta hoy — sin compromiso
+                Diagnóstico sin compromiso
             </p>
-            <div className="max-w-md mx-auto">
+            <div className="max-w-md mx-auto flex gap-2">
                 <a
-                    href={whatsAppHref('Hola BrandSoft, quiero cotizar el servicio de software IA / SEO / leads B2B. Escribo desde el botón móvil fijo.')}
+                    href="/#diagnostico"
+                    className="flex-1 flex items-center justify-center py-3.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-black text-[10px] uppercase tracking-wide"
+                >
+                    Agenda diagnóstico
+                </a>
+                <a
+                    href={whatsAppHref('Hola BrandSoft, quiero un diagnóstico para mi empresa (captación, SEO, web, automatización o software). Escribo desde el botón móvil fijo.')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all"
+                    className="flex-1 flex items-center justify-center gap-1.5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[10px] uppercase tracking-wide shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all"
                 >
                     <MessageCircle className="w-4 h-4 shrink-0" />
-                    WhatsApp — cotización / asesoría
+                    WhatsApp
                 </a>
             </div>
         </div>

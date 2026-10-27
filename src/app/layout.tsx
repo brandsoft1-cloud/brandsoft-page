@@ -19,27 +19,24 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BrandSoft | Automatización de Procesos con IA y n8n para Empresas",
+    default: "BrandSoft | Crecimiento digital, SEO y automatización para empresas",
     template: "%s | BrandSoft"
   },
-  description: "Automatizamos los procesos manuales de tu empresa con IA, agentes conversacionales y flujos en n8n. Consultoría de automatización para empresas y consultoras en Colombia y Latam. Recupera horas y reduce costos.",
+  description: "Atrae clientes, convierte oportunidades y automatiza tu crecimiento. Marketing digital, SEO/GEO, software a medida y automatización con IA para pymes y equipos B2B en Colombia y LatAm.",
   keywords: [
+    "crecimiento digital empresas",
+    "generación de leads B2B Colombia",
+    "SEO técnico y GEO",
     "automatización de procesos con IA",
-    "automatización con n8n Colombia",
-    "agentes de IA para empresas",
-    "consultoría de automatización",
-    "automatizar procesos empresariales",
-    "flujos de trabajo con n8n",
-    "RPA e inteligencia artificial",
-    "agentes de IA por WhatsApp",
-    "automatización para consultoras",
+    "desarrollo software a medida",
+    "BrandSoft",
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'BrandSoft | Automatización de Procesos con IA y n8n',
-    description: 'Agentes de IA y flujos automatizados con n8n que trabajan por tu empresa 24/7. Menos tareas manuales, más resultados.',
+    title: 'BrandSoft | Atrae. Convierte. Automatiza.',
+    description: 'Socio de crecimiento digital: captación, SEO, web, software y automatización conectados para empresas.',
     url: SITE_URL,
     siteName: 'BrandSoft',
     locale: 'es_CO',
@@ -47,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BrandSoft | Automatización de Procesos con IA y n8n',
-    description: 'Agentes de IA y flujos automatizados con n8n que trabajan por tu empresa 24/7. Menos tareas manuales, más resultados.',
+    title: 'BrandSoft | Atrae. Convierte. Automatiza.',
+    description: 'Marketing, SEO, software y automatización con IA para empresas que quieren crecer con un sistema conectado.',
   },
   robots: defaultRobotsMetadata,
   verification: {

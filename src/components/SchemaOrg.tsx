@@ -19,7 +19,7 @@ export default function SchemaOrg() {
                 logo: `${BASE}/logo.png`,
                 image: `${BASE}/og-image.jpg`,
                 description:
-                    'Automatización de procesos con inteligencia artificial, agentes de IA y flujos de trabajo con n8n para empresas y consultoras en Colombia y Latinoamérica. También SEO técnico, GEO/LLMO y generación de leads B2B.',
+                    'BrandSoft ayuda a empresas a atraer clientes, convertir oportunidades y automatizar el crecimiento con marketing digital, SEO/GEO, desarrollo de software y automatización con IA en Colombia y Latinoamérica.',
                 telephone: '+573213296957',
                 email: 'contacto@brandsoft.com.co',
                 priceRange: '$$$',

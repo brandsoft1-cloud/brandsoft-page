@@ -46,8 +46,13 @@ export default function Navbar() {
                             onMouseEnter={() => setDropdownOpen(true)}
                             onMouseLeave={() => setDropdownOpen(false)}
                         >
-                            <button className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors py-2">
-                                Servicios <ChevronDown className="w-4 h-4" />
+                            <button
+                                type="button"
+                                className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors py-2"
+                                aria-expanded={dropdownOpen}
+                                aria-haspopup="true"
+                            >
+                                Servicios <ChevronDown className="w-4 h-4" aria-hidden />
                             </button>
 
                             <AnimatePresence>
@@ -116,8 +121,13 @@ export default function Navbar() {
                             onMouseEnter={() => setSolutionsOpen(true)}
                             onMouseLeave={() => setSolutionsOpen(false)}
                         >
-                            <button className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors py-2">
-                                Soluciones <ChevronDown className="w-4 h-4" />
+                            <button
+                                type="button"
+                                className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors py-2"
+                                aria-expanded={solutionsOpen}
+                                aria-haspopup="true"
+                            >
+                                Soluciones <ChevronDown className="w-4 h-4" aria-hidden />
                             </button>
 
                             <AnimatePresence>
@@ -180,11 +190,17 @@ export default function Navbar() {
                         >
                             Sube de Nivel
                         </Link>
+                        <Link
+                            href="/#diagnostico"
+                            className="bg-violet-600 hover:bg-violet-500 text-white px-5 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-violet-600/25 whitespace-nowrap border-l border-white/10 ml-2 pl-5"
+                        >
+                            Agenda diagnóstico
+                        </Link>
                         <a
-                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú web y quiero cotizar un servicio: software IA, SEO/GEO o leads B2B.')}
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú web y quiero un diagnóstico: captación, SEO/GEO, web, automatización o software.')}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap border-l border-white/10 ml-2 pl-5"
+                            className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full font-black text-[11px] uppercase tracking-wide transition-colors shadow-lg shadow-emerald-600/25 whitespace-nowrap"
                         >
                             WhatsApp
                         </a>
@@ -192,10 +208,13 @@ export default function Navbar() {
 
                     <div className="md:hidden flex items-center">
                         <button
+                            type="button"
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-gray-300 hover:text-white p-2"
+                            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+                            aria-expanded={isOpen}
                         >
-                            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            {isOpen ? <X className="h-6 w-6" aria-hidden /> : <Menu className="h-6 w-6" aria-hidden />}
                         </button>
                     </div>
                 </div>
@@ -254,8 +273,15 @@ export default function Navbar() {
                         <Link href="/blog" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Blog</Link>
                         <Link href="/casos-de-exito" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Casos de Éxito</Link>
                         <Link href="/#founder" className="block px-3 py-2 text-gray-300 hover:text-white" onClick={() => setIsOpen(false)}>Nosotros</Link>
+                        <Link
+                            href="/#diagnostico"
+                            className="block px-3 py-2 text-violet-300 font-black uppercase text-sm"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Agenda un diagnóstico
+                        </Link>
                         <a
-                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero cotizar un servicio: software IA, SEO/GEO o leads B2B.')}
+                            href={whatsAppHref('Hola BrandSoft, escribo desde el menú móvil y quiero un diagnóstico: captación, SEO/GEO, web, automatización o software.')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block px-3 py-2 text-emerald-400 font-black uppercase text-sm"
